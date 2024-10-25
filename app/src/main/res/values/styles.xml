@@ -3,5 +3,7 @@
     <style name="sell_rad">
         <item name="android:textSize">80sp</item>
         <item name="android:textColor">#FFFFFF</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowRadius">50</item>
     </style>
 </resources>
