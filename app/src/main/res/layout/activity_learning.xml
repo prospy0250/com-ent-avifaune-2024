@@ -5,10 +5,12 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".LearningActivity">
 
     <ImageView
-        android:id="@+id/image_"
+        android:alpha="0.4"
+        android:id="@+id/image_1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
