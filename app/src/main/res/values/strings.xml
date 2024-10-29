@@ -4,4 +4,8 @@
     <string name="professionnel">Professionnel</string>
     <string name="label_text1">Apprendre</string>
     <string name="label_text2">Statistiques</string>
+    <string name="learn">Apprendre</string>
+    <string name="settings">Paramètres</string>
+    <string name="photo">Documenter</string>
+    <string name="stats">Statistiques</string>
 </resources>
