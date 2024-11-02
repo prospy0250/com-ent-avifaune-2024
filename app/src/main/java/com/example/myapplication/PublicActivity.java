@@ -18,7 +18,8 @@ public class PublicActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         // Load default fragment (e.g., HomeFragment)
-        loadFragment(new LearningPage());
+        loadFragment(new HomePage());
+        bottomNavigationView.setSelectedItemId(R.id.navigation_accueil);
 
         // Set up navigation item selection
         bottomNavigationView.setOnNavigationItemSelectedListener(item ->
