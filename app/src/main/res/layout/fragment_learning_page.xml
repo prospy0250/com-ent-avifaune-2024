@@ -1,15 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<!-- res/layout/fragment_apprendre.xml -->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LearningPage">
+    android:padding="16dp">
 
-    <!-- TODO: Update blank fragment layout -->
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical">
+
+<!-- Header Text -->
+<TextView
+    android:id="@+id/headerText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="En savoir plus sur l’avifaune présente dans la vasière"
+    android:textSize="18sp"
+    android:textColor="@android:color/white"
+    android:background="@android:color/darker_gray"
+    android:padding="16dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginBottom="16dp"/>
+
+<!-- First Section Header -->
+<TextView
+    android:id="@+id/sectionHeader1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Espèces"
+    android:textSize="16sp"
+    android:textStyle="bold"
+    android:layout_marginBottom="8dp"
+    android:padding="8dp"/>
+
+<!-- Grid of Species Images (First Section) -->
+<GridLayout
+    android:id="@+id/firstGrid"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:columnCount="3"
+    android:rowCount="3"
+    android:layout_marginBottom="16dp"
+    android:layout_gravity="center_horizontal">
+
+    <!-- Placeholder for each species image -->
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:background="@android:color/darker_gray"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:layout_margin="8dp"
+        android:background="@android:color/darker_gray" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:background="@android:color/darker_gray"/>
+
+    <!-- Add more ImageViews as needed -->
+
+</GridLayout>
+
     <TextView
+        android:id="@+id/sectionHeader1.1"
+        android:layout_width="wrap_content"
+        android:layout_height="132dp"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp"
+        android:text="Un total de 98 espèces d’oiseaux d’eau a été recensé, regroupant 21 600 individus sur l’année. La Bernache cravant (3 000 individus) et la Foulque macroule (672 individus) figurent parmi les espèces les plus abondantes.
+En janvier 2021, le dénombrement a montré des pics de présence dans la Petite Mer de Gâvres (environ 10 000 individus), la sortie de la rade, et d'autres sites comme le Blavet maritime."
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+<!-- Second Section Header -->
+    <TextView
+    android:id="@+id/sectionHeader2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Oiseaux Nicheurs"
+    android:textSize="16sp"
+    android:textStyle="bold"
+    android:layout_marginBottom="8dp"
+    android:padding="8dp"/>
+
+<!-- Grid of Species Images (Second Section) -->
+<GridLayout
+    android:id="@+id/secondGrid"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:columnCount="3"
+    android:rowCount="2"
+    android:layout_gravity="center_horizontal">
+
+    <!-- Placeholder for each species image -->
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:background="@android:color/darker_gray"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:background="@android:color/darker_gray"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:background="@android:color/darker_gray"/>
+
+    <!-- Add more ImageViews as needed -->
+
+</GridLayout>
+
+    <!-- 3rd Section Header -->
+    <TextView
+        android:id="@+id/sectionHeader3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Learning Page"
-        android:textSize="24sp" />
+        android:text="Enjeux de Conservation"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp"/>
 
-</FrameLayout>
+    <!-- Grid of Species Images (Second Section) -->
+    <GridLayout
+        android:id="@+id/thirdGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="2"
+        android:layout_gravity="center_horizontal">
+
+        <!-- Placeholder for each species image -->
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"/>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"/>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"/>
+
+        <!-- Add more ImageViews as needed -->
+
+    </GridLayout>
+
+</LinearLayout>
+    </ScrollView>
