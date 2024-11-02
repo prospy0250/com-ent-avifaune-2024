@@ -3,62 +3,62 @@ package com.example.myapplication;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link StatsPage#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class StatsPage extends Fragment {
+    private static final String VALID_USERNAME = "user";
+    private static final String VALID_PASSWORD = "password";
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private EditText usernameField;
+    private EditText passwordField;
+    private Button loginButton;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public StatsPage() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment StatsPage.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static StatsPage newInstance(String param1, String param2) {
-        StatsPage fragment = new StatsPage();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    @Nullable
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_stats_page, container, false);
+
+        usernameField = view.findViewById(R.id.usernameField);
+        passwordField = view.findViewById(R.id.passwordField);
+        loginButton = view.findViewById(R.id.loginButton);
+
+        loginButton.setOnClickListener(v -> authenticateUser());
+
+        return view;
+    }
+
+    private void authenticateUser() {
+        String username = usernameField.getText().toString();
+        String password = passwordField.getText().toString();
+
+        if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
+            Toast.makeText(getContext(), "Please enter both username and password", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (username.equals(VALID_USERNAME) && password.equals(VALID_PASSWORD)) {
+            // Navigate to the stats content (replace fragment or show stats content here)
+            Toast.makeText(getContext(), "Login successful!", Toast.LENGTH_SHORT).show();
+            showStatsContent();
+        } else {
+            Toast.makeText(getContext(), "Invalid username or password", Toast.LENGTH_SHORT).show();
         }
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_stats_page, container, false);
+    private void showStatsContent() {
+        // Replace the login layout with the stats content once authenticated
+        // For example, you could replace this fragment or just update the view
+        getFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, new Stats())
+                .commit();
     }
 }
