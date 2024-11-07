@@ -17,9 +17,8 @@ public class PublicActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        // Load default fragment (e.g., HomeFragment)
-        loadFragment(new HomePage());
-        bottomNavigationView.setSelectedItemId(R.id.navigation_accueil);
+        // YOU NEED TO DEFINE THE NEW HOME PAGE AND MAKE IT SHOW BY DEFAULT
+
 
         // Set up navigation item selection
         bottomNavigationView.setOnNavigationItemSelectedListener(item ->

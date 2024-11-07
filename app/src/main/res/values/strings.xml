@@ -6,4 +6,8 @@
     <string name="label_text2">Statistiques</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="learn">Apprendre</string>
+    <string name="settings">Paramètres</string>
+    <string name="photo">Documenter</string>
+    <string name="stats">Statistiques</string>
 </resources>
