@@ -31,10 +31,8 @@ public class PublicActivity extends AppCompatActivity {
                 selectedFragment = new StatsPage();
             } else if (item.getItemId() == R.id.navigation_parametres) {
                 selectedFragment = new SettingsPage();
-            } else if (item.getItemId() == R.id.navigation_documenter) {
-                selectedFragment = new PhotoPage();
             } else {
-                selectedFragment = new HomePage();
+                selectedFragment = new PhotoPage();
             }
             loadFragment(selectedFragment);
             return true;
