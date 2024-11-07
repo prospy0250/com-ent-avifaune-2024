@@ -10,4 +10,7 @@
     <string name="settings">Paramètres</string>
     <string name="photo">Documenter</string>
     <string name="stats">Statistiques</string>
+    <string name="login">Se connecter</string>
+    <string name="user_name">Nom d\'utilisateur</string>
+    <string name="password">Password</string>
 </resources>
