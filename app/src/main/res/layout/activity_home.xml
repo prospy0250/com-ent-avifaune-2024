@@ -57,6 +57,7 @@
         />
 
     <Button
+        android:id="@+id/learning_button"
         android:layout_width="168dp"
         android:layout_height="124dp"
         android:layout_marginStart="34dp"
@@ -82,10 +83,11 @@
         />
 
     <Button
+        android:id="@+id/settings_button"
         android:layout_width="168dp"
         android:layout_height="124dp"
         android:layout_marginStart="34dp"
-        android:layout_marginBottom="97dp"
+        android:layout_marginTop="241dp"
         android:layout_gravity="center_vertical"
         android:backgroundTint="#517293"
         android:drawableLeft="@drawable/param"
@@ -107,6 +109,7 @@
         />
 
     <Button
+        android:id="@+id/photo_button"
         android:layout_width="168dp"
         android:layout_height="124dp"
         android:layout_marginStart="34dp"
@@ -132,10 +135,11 @@
         />
 
     <Button
+        android:id="@+id/stats_button"
         android:layout_width="168dp"
         android:layout_height="124dp"
         android:layout_marginStart="34dp"
-        android:layout_marginTop="241dp"
+        android:layout_marginBottom="97dp"
         android:layout_gravity="center_vertical"
         android:backgroundTint="#517293"
         android:drawableLeft="@drawable/stats"
