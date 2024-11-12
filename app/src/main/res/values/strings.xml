@@ -13,4 +13,6 @@
     <string name="login">Se connecter</string>
     <string name="user_name">Nom d\'utilisateur</string>
     <string name="password">Password</string>
+    <string name="learning_page_header">En savoir plus sur l’avifaune présente dans la vasière</string>
+    <string name="go_land_argent">Goëland Argenté</string>
 </resources>
