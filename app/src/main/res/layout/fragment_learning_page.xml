@@ -39,7 +39,7 @@
             android:textAlignment="center"
             android:textColor="#CA000000"
             android:textSize="18sp"
-            android:layout_marginBottom="69dp"
+            android:layout_marginBottom="29dp"
             android:layout_marginEnd="40dp"
             android:layout_marginStart="-20dp"/>
 
@@ -81,6 +81,16 @@
             </LinearLayout>
         </HorizontalScrollView>
 
+        <com.colormoon.readmoretextview.ReadMoreTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/goelandDescription"
+            android:text="@string/goelandDesc"
+            android:textSize="16sp"
+            android:layout_marginLeft="16dp"
+            android:background="@drawable/shape_transparent"
+            android:layout_marginRight="16dp"/>
 
     </LinearLayout>
 </ScrollView>
