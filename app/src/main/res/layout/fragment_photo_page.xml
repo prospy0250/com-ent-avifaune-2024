@@ -47,7 +47,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/folder_button"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="#517293"
+        style="@style/ButtonAppearance" />
 
     <!-- Folder Button -->
     <Button
@@ -59,7 +61,9 @@
         android:text="Folder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/camera_button" />
+        app:layout_constraintStart_toEndOf="@+id/camera_button"
+        android:backgroundTint="#517293"
+        style="@style/ButtonAppearance" />
 
     <!-- Main Image Display -->
     <ImageView

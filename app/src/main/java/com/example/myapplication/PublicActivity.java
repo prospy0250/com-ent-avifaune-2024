@@ -9,6 +9,8 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.Objects;
+
 public class PublicActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,9 +19,27 @@ public class PublicActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        // Load default fragment (e.g., HomeFragment)
-        loadFragment(new HomePage());
-        bottomNavigationView.setSelectedItemId(R.id.navigation_accueil);
+        // Check for which fragment to load
+        String targetFragment=getIntent().getStringExtra("TARGET_FRAGMENT");
+        assert targetFragment != null;
+        switch (targetFragment) {
+            case "LearningPage":
+                loadFragment(new LearningPage());
+                bottomNavigationView.setSelectedItemId(R.id.navigation_apprendre);
+                break;
+            case "StatsPage":
+                loadFragment(new StatsPage());
+                bottomNavigationView.setSelectedItemId(R.id.navigation_statistiques);
+                break;
+            case "SettingsPage":
+                loadFragment(new SettingsPage());
+                bottomNavigationView.setSelectedItemId(R.id.navigation_parametres);
+                break;
+            case "PhotoPage":
+                loadFragment(new PhotoPage());
+                bottomNavigationView.setSelectedItemId(R.id.navigation_documenter);
+                break;
+        }
 
         // Set up navigation item selection
         bottomNavigationView.setOnNavigationItemSelectedListener(item ->
@@ -32,10 +52,8 @@ public class PublicActivity extends AppCompatActivity {
                 selectedFragment = new StatsPage();
             } else if (item.getItemId() == R.id.navigation_parametres) {
                 selectedFragment = new SettingsPage();
-            } else if (item.getItemId() == R.id.navigation_documenter) {
-                selectedFragment = new PhotoPage();
             } else {
-                selectedFragment = new HomePage();
+                selectedFragment = new PhotoPage();
             }
             loadFragment(selectedFragment);
             return true;
