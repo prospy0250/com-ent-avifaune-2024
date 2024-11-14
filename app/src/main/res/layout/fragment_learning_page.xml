@@ -1,97 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?><!-- res/layout/fragment_apprendre.xml -->
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="16dp">
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <!-- Header Text -->
-        <TextView
-            android:id="@+id/header_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/shape_transparent"
-            android:fontFamily="@font/tauri"
-            android:padding="16dp"
-            android:text="@string/learning_page_header"
-            android:textAlignment="center"
-            android:textColor="#CA000000"
-            android:textSize="18sp"
-            android:layout_marginBottom="69dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"/>
-        <TextView
-            android:id="@+id/goeland_argente"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape_transparent"
-            android:fontFamily="@font/tauri"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
-            android:paddingRight="85dp"
-            android:paddingLeft="85dp"
-            android:text="@string/go_land_argent"
-            android:textAlignment="center"
-            android:textColor="#CA000000"
-            android:textSize="18sp"
-            android:layout_marginBottom="29dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginStart="-20dp"/>
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/polygon_5"
+        android:paddingTop="30dp"
+        android:paddingEnd="50dp"
+        android:text="@string/apprendre"
+        android:textAlignment="center"
+        android:textColor="#1E1E1E"
+        android:textSize="38sp" />
 
-        <HorizontalScrollView
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="16dp"
+        android:paddingBottom="80dp">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- Header Text -->
+            <TextView
+                android:id="@+id/header_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="33dp"
+                android:background="@drawable/shape_transparent"
+                android:padding="10dp"
+                android:text="@string/learning_page_header"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/becasseau"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shape_1"
+                android:gravity="center|start"
+                android:paddingStart="12dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/becasseau"
+                android:textColor="#000000"
+                android:textSize="18sp" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_2"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="33dp">
                 <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="157dp"
-                    android:layout_height="144dp"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/goeland"
-                    android:layout_margin="16dp"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/becasseau_sanderling"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="12dp"/>
 
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="157dp"
-                    android:layout_height="144dp"
-                    android:scaleType="centerCrop"
-                    android:scrollY="-25dp"
-                    app:srcCompat="@drawable/goeland_2"
-                    android:layout_margin="16dp"/>
-
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="157dp"
-                    android:layout_height="144dp"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/goeland_3"
-                    android:layout_margin="16dp"/>
-
-
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/know_more"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/inter"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="12dp"
+                    android:backgroundTint="#517293"
+                    style="@style/ButtonAppearance"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"/>
             </LinearLayout>
-        </HorizontalScrollView>
 
-        <com.colormoon.readmoretextview.ReadMoreTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:id="@+id/goelandDescription"
-            android:text="@string/goelandDesc"
-            android:textSize="16sp"
-            android:layout_marginLeft="16dp"
-            android:background="@drawable/shape_transparent"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="85dp"/>
+            <TextView
+                android:id="@+id/goeland"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shape_1"
+                android:gravity="center|start"
+                android:paddingStart="12dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/becasseau"
+                android:textColor="#000000"
+                android:textSize="18sp" />
 
-    </LinearLayout>
-</ScrollView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_2"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="33dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/becasseau_sanderling"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="12dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/know_more"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/inter"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="12dp"
+                    android:backgroundTint="#517293"
+                    style="@style/ButtonAppearance"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/autre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shape_1"
+                android:gravity="center|start"
+                android:paddingStart="12dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/becasseau"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_2"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="33dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/becasseau_sanderling"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="12dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/know_more"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/inter"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="12dp"
+                    android:backgroundTint="#517293"
+                    style="@style/ButtonAppearance"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/encoreautre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shape_1"
+                android:gravity="center|start"
+                android:paddingStart="12dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/becasseau"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_2"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="33dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/becasseau_sanderling"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="12dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/know_more"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/inter"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="12dp"
+                    android:backgroundTint="#517293"
+                    style="@style/ButtonAppearance"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
