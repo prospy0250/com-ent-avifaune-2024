@@ -13,8 +13,48 @@
     <string name="login">Se connecter</string>
     <string name="user_name">Nom d\'utilisateur</string>
     <string name="password">Password</string>
-    <string name="learning_page_header">En savoir plus sur l’avifaune présente dans la vasière</string>
-    <string name="go_land_argent">Goëland Argenté</string>
-    <string name="goelandDesc">Le Goéland argenté (Larus argentatus) est une espèce d\'oiseaux de mer européens de taille moyenne de la famille des Laridae. Blanc à dos gris, il est génétiquement proche des autres goélands à tête blanche du genre Larus. Mâle et femelle sont presque identiques, mais le juvénile possède un plumage très différent et met quatre ans à acquérir son plumage d\'adulte.\n\nLa taxonomie du goéland argenté, très complexe, a subi depuis la fin du XXe siècle des modifications importantes qui sont encore en discussion. Notamment, le goéland hudsonien vivant en Amérique du Nord, et le goéland de la Véga, asiatique, ont été séparés du goéland argenté européen, ou goéland argenté sensu stricto, depuis le début du XXIe siècle.\n\nBon voilier et bon marcheur, le goéland est un omnivore opportuniste à tendance carnivore, qui n\'hésite pas à devenir charognard, ou à pratiquer le cleptoparasitisme, voire le cannibalisme. Oiseau sociable, il niche en colonie et produit chaque année deux ou trois oisillons qui, s\'ils parviennent à l\'âge adulte, auront une probabilité de survie particulièrement élevée.\n\nLes populations de goélands argentés ont connu une forte augmentation tout au long du XXe siècle. Cela a eu pour conséquence des heurts avec l\'espèce humaine au niveau local, ou un impact négatif sur l\'environnement, suscitant des opérations de régulation à l\'échelle locale ou régionale. En dépit d\'une stabilisation des effectifs au cours des dernières décennies, voire de déclins dans certaines régions, le goéland argenté reste un oiseau de mer très commun sur les côtes de France et de la plupart des pays de l\'Europe de l\'Ouest.</string>
+    <string name="learning_page_header">Espèces présentes dans la baie</string>
+    <string name="becasseau">Bécasseau Sanderling</string>
+    <string name="goeland_argente"><u>Goëland argenté</u>\nJe ne m’éloigne guère de la mer, ni même au-delà d’un rayon de cent kilomètres
+        autour de mon lieu de naissance. Mon plumage noir sur le dos et mes yeux gris me différencient de mes cousins les goélands argenté et brun.
+        Ma taille imposante me permet de régner en seigneur sur les autres espèces de goélands, dont, à l’occasion, je peux mettre les plus jeunes à mon menu.</string>
     <string name="connexion_text">Connexion</string>
+    <string name="apprendre">Apprendre</string>
+    <string name="know_more">En apprendre plus</string>
+    <string name="becasseau_sanderling"><u>Bécasseau Sanderling</u>\nJe suis un petit limicole court sur pattes et assez rondelet.
+        Très actif, je me déplace avec une agilité et une rapidité surprenante sur les plages, en quête de nourriture.
+        Il est même compliqué de distinguer le mouvement de mes pattes ! En hiver, mon plumage est uniformément gris argenté sur le dessus,
+        tandis que mon ventre est d’un blanc pur.</string>
+    <string name="retour">Retour</string>
+    <string name="bernache">Bernache Cravant</string>
+    <string name="bernache_cravant"><u>Bernache Cravant</u>\nLa bernache cravant est une oie migratrice qui
+        arrive de Sibérie, où elle se reproduit, pour hiverner sur nos côtes d’octobre à mars.
+        Herbivore, elle se nourrit sur les herbiers de zostères, dont elle broute les feuilles, et est largement inféodée à ces herbiers côtiers.</string>
+    <string name="goeland">Goëland argenté</string>
+    <string name="mouette">Mouette rieuse</string>
+    <string name="pluvier_argente">Pluvier Argenté</string>
+    <string name="grand_cormoran">Grand cormoran</string>
+    <string name="foulque_macroule">Foulque macroule</string>
+    <string name="tadorne_de_belon">Tadorne de Belon</string>
+    <string name="chevalier_gambette">Chevalier Gambette</string>
+    <string name="mouette_rieuse"><u>Mouette rieuse</u>\nMes ricanements très vexants m’ont valu mon nom. On dirait que je me moque du monde !
+        Oiseau d’eau, je suis  très commune dans toutes les villes fluviales auxquelles j’accède en remontant les cours d’eau.
+        Je préfère les eaux calmes des fleuves et des lacs pour me reproduire et le climat océanique pour passer l’hiver.</string>
+    <string name="pluvier"><u>Pluvier Argenté</u>\nLe saviez-vous ? Mon nom en vieux français signifie que j’arrive avec les pluies !
+        J’ai un bec très court et un plumage aux couleurs de la vase, difficile de me repérer sur les vasières…
+        Je me reproduis dans le Grand Nord, dans la toundra arctique et j’arrive dans votre pays pour y passer l’hiver.</string>
+    <string name="cormoran"><u>Grand cormoran</u>\n« Cormoran » vient du vieux français « corbeau de mer ».
+        Comme mon nom l’indique, mon plumage est de couleur noir corbeau. Mon bec est jaune pâle et mes narines se ferment sous l’eau,
+        ce qui me permet de rester en apnée pendant soixante-dix secondes. En revanche, je ne suis pas que marin, n’aimant pas plonger trop profond,
+        les eaux des étangs et rivières me conviennent également.</string>
+    <string name="foulque"><u>Foulque macroule</u>\nLa Foulque macroule est un gros oiseau qui a l’air bossu quand il marche au sol,
+        ce qui n’est pas très fréquent car il passe la plupart de son temps sur les plans d’eau.
+        Ses plumes sont noires, ses yeux petits et rouges, son bec blanc est surmonté d’une espèce d’écusson blanc au front
+        (rappelons-nous, celui de la poule d’eau est rouge vif). Sa queue est courte et une bande blanche est visible en vol sur ses rémiges secondaires.</string>
+    <string name="tadorne"><u>Tadorne de Belon</u>\nJe ressemble à une oie mais j’ai un bec de canard bien rouge.
+        Si je suis un mâle, mon bec est surmonté d’un tubercule rouge également.
+        Au printemps vous pouvez observer mes petits cannetons gardés en groupe !</string>
+    <string name="chevalier"><u>Chevalier gambette</u>\nPlutôt solitaire et long sur pattes,
+        vous me reconnaîtrez à mes pattes et à mon bec bien rouges. Pour le reste je suis brun moucheté sur le dos et blanc sur le ventre,
+        une parfaite tenue de camouflage !</string>
 </resources>
