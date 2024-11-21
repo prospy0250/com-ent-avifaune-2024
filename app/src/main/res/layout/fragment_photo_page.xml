@@ -54,22 +54,22 @@
     <!-- Folder Button -->
     <Button
         android:id="@+id/folder_button"
+        style="@style/ButtonAppearance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="340dp"
-        android:text="Folder"
+        android:backgroundTint="#517293"
+        android:text="gallerie"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/camera_button"
-        android:backgroundTint="#517293"
-        style="@style/ButtonAppearance" />
+        app:layout_constraintStart_toEndOf="@+id/camera_button" />
 
     <!-- Main Image Display -->
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="285dp"
-        android:layout_height="241dp"
+        android:layout_width="314dp"
+        android:layout_height="288dp"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
