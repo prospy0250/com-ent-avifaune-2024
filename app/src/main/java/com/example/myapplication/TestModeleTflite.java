@@ -237,6 +237,22 @@ public class TestModeleTflite {
         }
     }
 
+    public Bitmap recognizeSpecies(Bitmap inputImage){
+        TensorBuffer outputBuffer = predict(inputImage);
+        List<BoundingBox> boxes = processOutput(outputBuffer);
+        return annotateImage(inputImage, boxes);
+    }
+
+    public List<String> recognizeSpeciesClass(Bitmap inputImage){
+        ArrayList<String> speciesNames = new ArrayList<>();
+        TensorBuffer outputBuffer = predict(inputImage);
+        List<BoundingBox> boxes = processOutput(outputBuffer);
+        for(BoundingBox box:boxes){
+            if(!speciesNames.contains(box.clsName)) speciesNames.add(box.clsName);
+        }
+        return speciesNames;
+    }
+
 
     public static void main(String [] args){
     /*

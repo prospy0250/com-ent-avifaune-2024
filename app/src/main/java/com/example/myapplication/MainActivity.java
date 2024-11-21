@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,10 +20,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Button recognizeButton = findViewById(R.id.buttonRecognize);
-        setContentView(R.layout.activity_main1);
-        TextView textView = findViewById(R.id.testInference);
-        /*
+        //setContentView(R.layout.activity_main1);
+
         setContentView(R.layout.activity_main);
 
 
@@ -35,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 }
-        }, delayMillis); */
+        }, delayMillis);
+
 
 
     }
