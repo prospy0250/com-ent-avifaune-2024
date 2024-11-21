@@ -7,6 +7,17 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_transparent"
+        android:layout_gravity="center"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="190dp"
+        android:text="@string/connexion_text"
+        android:textAlignment="center"
+        android:textSize="17sp"/>
     <LinearLayout
         android:layout_gravity="center"
         android:layout_width="match_parent"
@@ -14,23 +25,13 @@
         android:orientation="vertical"
         android:padding="15dp"
         android:layout_margin="25dp"
-        android:background="@drawable/shape">
+        android:background="@drawable/shape_transparent">
         <TextView
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/user_name"
             android:textSize="17sp"/>
-        <!--        <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/usernameField"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </com.google.android.material.textfield.TextInputLayout>
-        -->
 
         <!-- Username Field -->
         <EditText
