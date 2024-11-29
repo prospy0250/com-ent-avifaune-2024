@@ -27,7 +27,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.MappedByteBuffer;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class TestModeleTflite {
     private static final String MODEL_PATH = "model_float32.tflite";
@@ -217,6 +219,7 @@ public class TestModeleTflite {
             );
             canvas.drawRect(rect, paint);
             canvas.drawText(box.clsName, rect.left, rect.bottom, textPaint);
+            canvas.drawText(new StringBuilder().append("prob : ").append(String.format("%.2f", box.cnf)).toString(), rect.left, rect.top, textPaint);
         }
 
         return mutableBitmap;
@@ -243,14 +246,22 @@ public class TestModeleTflite {
         return annotateImage(inputImage, boxes);
     }
 
-    public List<String> recognizeSpeciesClass(Bitmap inputImage){
-        ArrayList<String> speciesNames = new ArrayList<>();
+    public OutputPredictedImage recognizeSpeciesClass(Bitmap inputImage){
+        //ArrayList<String> speciesNames = new ArrayList<>();
+        Map<String, Integer> predictionResults = new HashMap<>();
         TensorBuffer outputBuffer = predict(inputImage);
         List<BoundingBox> boxes = processOutput(outputBuffer);
         for(BoundingBox box:boxes){
-            if(!speciesNames.contains(box.clsName)) speciesNames.add(box.clsName);
+            if(predictionResults.containsKey(box.clsName)){
+                int previousNumber = predictionResults.get(box.clsName);
+                predictionResults.put(box.clsName, previousNumber + 1);
+            }else{
+                predictionResults.put(box.clsName, 1);
+            }
+
         }
-        return speciesNames;
+        Bitmap annotatedImage =  annotateImage(inputImage, boxes);
+        return new OutputPredictedImage(annotatedImage, predictionResults);
     }
 
 

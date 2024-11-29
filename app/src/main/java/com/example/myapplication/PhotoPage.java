@@ -123,22 +123,14 @@ public class PhotoPage extends Fragment {
         try {
             TestModeleTflite testModeleTflite = new TestModeleTflite(this.getContext());
 
-            /*
-            List<String> speciesDetected =  testModeleTflite.recognizeSpeciesClass(scaledBitmap);
-
-            StringBuilder recognationOutput = new StringBuilder("Espèces détectées : ");
-            for(String specie:speciesDetected){
-                recognationOutput.append(specie).append("\t");
-            }
-
-            TextView textView = getView().findViewById(R.id.textView2);
-            textView.setText(recognationOutput);*/
-            Bitmap annotatedImage = testModeleTflite.recognizeSpecies(bitmap);
+            OutputPredictedImage outputPredictedImage = testModeleTflite.recognizeSpeciesClass(bitmap);
+            Bitmap annotatedImage = outputPredictedImage.getAnnotatedImage();
             double height = 1.5 * annotatedImage.getHeight();
             double width = 1.5 * annotatedImage.getWidth();
             scaledBitmap = Bitmap.createScaledBitmap(annotatedImage, (int) width, (int) height, true);
             imageView.setImageBitmap(scaledBitmap);
-
+            //TextView textView = getView().findViewById(R.id.textView2);
+            textView.setText(outputPredictedImage.toString());
 
         } catch (IOException e) {
             throw new RuntimeException(e);
