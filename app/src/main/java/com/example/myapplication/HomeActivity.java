@@ -11,19 +11,25 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        // If tutorial ran from photo page
+        boolean fromPhotoPage = getIntent().getBooleanExtra("FROM_PHOTO_PAGE", false);
+        if (fromPhotoPage) runTutorial(true);
+
         String tutorialKey = "FIRST_TIME_TUTORIAL";
         boolean preferences = getIntent().getBooleanExtra("PREFERENCES",true);
         if (!preferences) getPreferences(MODE_PRIVATE).edit().putBoolean(tutorialKey, false).apply();
         boolean firstTime = getPreferences(MODE_PRIVATE).getBoolean(tutorialKey, true);
         if (firstTime) {
-            runTutorial();
+            runTutorial(false);
         }
     }
 
-    private void runTutorial() {
-        Intent intent = new Intent(HomeActivity.this, TutorialActivity.class);
-        startActivity(intent);
-        finish();
+    private void runTutorial(boolean fromPhotoPage) {
+            Intent intent = new Intent(HomeActivity.this, TutorialActivity.class);
+            intent.putExtra("FROM_PHOTO_PAGE", fromPhotoPage);
+            startActivity(intent);
+            finish();
     }
 
     @Override
@@ -83,7 +89,6 @@ public class HomeActivity extends AppCompatActivity {
         };
         photoButton.setOnClickListener(listenerPhotoButton);
     }
-
     /**
      * A method to go to the learning page
      * @param pageToGo a string to signify to which page we want to go

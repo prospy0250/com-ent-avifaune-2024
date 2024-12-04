@@ -5,7 +5,6 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -26,7 +25,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.IOException;
-import java.util.List;
 
 public class PhotoPage extends Fragment {
     private static final int CAMERA_REQUEST_CODE = 3;
@@ -34,7 +32,7 @@ public class PhotoPage extends Fragment {
     private static final int CAMERA_PERMISSION_REQUEST_CODE = 100;
 
     Button cameraButton, folderButton;
-    TextView textView, txtView;
+    TextView textPredictionOutput, textProbabilityOutput;
     ImageView imageView;
 
     int imageSize = 256;
@@ -47,9 +45,10 @@ public class PhotoPage extends Fragment {
         // Initialize UI elements
         cameraButton = view.findViewById(R.id.camera_button);
         folderButton = view.findViewById(R.id.folder_button);
-        textView = view.findViewById(R.id.textView);
-        txtView = view.findViewById(R.id.txtView);
-        imageView = view.findViewById(R.id.imageView);
+        textPredictionOutput = view.findViewById(R.id.textPredictionOutput);
+        textProbabilityOutput = view.findViewById(R.id.textProbabilityOutput);
+        imageView = view.findViewById(R.id.main_image_display);
+        Button seeTutoButton = view.findViewById(R.id.see_tuto);
 
         // Set up button click listeners
         cameraButton.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +71,18 @@ public class PhotoPage extends Fragment {
                 startActivityForResult(folderIntent, GALLERY_REQUEST_CODE);
             }
         });
+
+        View.OnClickListener lSeeTutoButton = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), HomeActivity.class);
+                intent.putExtra("FROM_PHOTO_PAGE", true);
+                startActivity(intent);
+                getActivity().finish();
+            }
+        };
+
+        seeTutoButton.setOnClickListener(lSeeTutoButton);
 
         return view;
     }
@@ -130,7 +141,7 @@ public class PhotoPage extends Fragment {
             scaledBitmap = Bitmap.createScaledBitmap(annotatedImage, (int) width, (int) height, true);
             imageView.setImageBitmap(scaledBitmap);
             //TextView textView = getView().findViewById(R.id.textView2);
-            textView.setText(outputPredictedImage.toString());
+            textPredictionOutput.setText(outputPredictedImage.toString());
 
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -148,7 +159,7 @@ public class PhotoPage extends Fragment {
                 startActivityForResult(cameraIntent, CAMERA_REQUEST_CODE);
             } else {
                 Log.e("PhotoPage", "Camera permission denied");
-                textView.setText("Camera permission denied. Please allow it to use this feature.");
+                textPredictionOutput.setText("Camera permission denied. Please allow it to use this feature.");
             }
         }
     }

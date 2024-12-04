@@ -25,6 +25,8 @@ public class TutorialActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
 
+        boolean fromPhotoPage = getIntent().getBooleanExtra("FROM_PHOTO_PAGE", false);
+
         ViewPager2 viewPager2=findViewById(R.id.tutorial_viewpager);
 
         List<Integer> layouts = Arrays.asList(
@@ -36,13 +38,21 @@ public class TutorialActivity extends AppCompatActivity {
         viewPager2.setAdapter(adapter);
         LinearLayout dotsLayout = findViewById(R.id.dots_layout);
         Button tutoEndButton = findViewById(R.id.tuto_end_button);
+
         View.OnClickListener lTutoEndButton = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TutorialActivity.this, HomeActivity.class);
-                intent.putExtra("PREFERENCES", false);
-                startActivity(intent);
-                finish();
+                if (fromPhotoPage) {
+                    Intent intent = new Intent(TutorialActivity.this, PublicActivity.class);
+                    intent.putExtra("TARGET_FRAGMENT", "PhotoPage");
+                    startActivity(intent);
+                    finish();
+                } else {
+                    Intent intent = new Intent(TutorialActivity.this, HomeActivity.class);
+                    intent.putExtra("PREFERENCES", false);
+                    startActivity(intent);
+                    finish();
+                }
             }
         };
         tutoEndButton.setOnClickListener(lTutoEndButton);
