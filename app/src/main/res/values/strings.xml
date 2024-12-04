@@ -8,7 +8,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="learn">Apprendre</string>
     <string name="settings">Paramètres</string>
-    <string name="photo">Documenter</string>
+    <string name="photo">Identifier</string>
     <string name="stats">Statistiques</string>
     <string name="login">Se connecter</string>
     <string name="user_name">Nom d\'utilisateur</string>
@@ -57,4 +57,10 @@
     <string name="chevalier"><u>Chevalier gambette</u>\nPlutôt solitaire et long sur pattes,
         vous me reconnaîtrez à mes pattes et à mon bec bien rouges. Pour le reste je suis brun moucheté sur le dos et blanc sur le ventre,
         une parfaite tenue de camouflage !</string>
+    <string name="tuto_cam">Avec sa caméra</string>
+    <string name="tuto_id">Identifier des espèces</string>
+    <string name="tuto_gal">Sur sa galerie</string>
+    <string name="tuto_app">En apprendre plus sur\nl\'avifaune présente à Lorient</string>
+    <string name="tuto_page_app">Sur la page Apprendre</string>
+    <string name="tuto_end">C\'est parti</string>
 </resources>
