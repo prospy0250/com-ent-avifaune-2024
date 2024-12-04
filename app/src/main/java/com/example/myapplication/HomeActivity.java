@@ -9,6 +9,24 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class HomeActivity extends AppCompatActivity {
     @Override
+    protected void onResume() {
+        super.onResume();
+        String tutorialKey = "FIRST_TIME_TUTORIAL";
+        boolean preferences = getIntent().getBooleanExtra("PREFERENCES",true);
+        if (!preferences) getPreferences(MODE_PRIVATE).edit().putBoolean(tutorialKey, false).apply();
+        boolean firstTime = getPreferences(MODE_PRIVATE).getBoolean(tutorialKey, true);
+        if (firstTime) {
+            runTutorial();
+        }
+    }
+
+    private void runTutorial() {
+        Intent intent = new Intent(HomeActivity.this, TutorialActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);

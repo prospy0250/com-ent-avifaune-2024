@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="5.7dp"
+        android:src="@drawable/polygon_6" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="-131dp"
+        android:src="@drawable/line_1" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_transparent_blue"
+        android:text="@string/tuto_id"
+        android:textSize="29sp"
+        android:fontFamily="@font/inter"
+        android:paddingHorizontal="36dp"
+        android:paddingVertical="13dp"
+        android:textColor="#D9D9D9"
+        android:textStyle="bold"
+        android:rotation="-5"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="250dp"
+        android:layout_marginLeft="-15dp"/>
+
+    <FrameLayout
+        android:layout_width="320dp"
+        android:layout_height="296dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="75dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/shape_transparent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/tuto_cam"
+            android:textSize="16sp"
+            android:fontFamily="@font/inter"
+            android:paddingTop="12dp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/becasseau_sanderling_2"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="50dp"
+            android:paddingBottom="19dp"/>
+    </FrameLayout>
+</FrameLayout>
