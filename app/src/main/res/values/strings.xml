@@ -9,7 +9,7 @@
     <string name="learn">Apprendre</string>
     <string name="settings">Paramètres</string>
     <string name="photo">Identifier</string>
-    <string name="stats">Statistiques</string>
+    <string name="stats">Mode Pro</string>
     <string name="login">Se connecter</string>
     <string name="user_name">Nom d\'utilisateur</string>
     <string name="password">Password</string>
@@ -63,4 +63,8 @@
     <string name="tuto_app">En apprendre plus sur\nl\'avifaune présente à Lorient</string>
     <string name="tuto_page_app">Sur la page Apprendre</string>
     <string name="tuto_end">C\'est parti</string>
+    <string name="camera">Caméra</string>
+    <string name="galerie">Galerie</string>
+    <string name="especes">Espèce(s) identifiée(s)</string>
+    <string name="see_tuto">Revoir le tutoriel</string>
 </resources>
