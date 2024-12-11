@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import com.example.myapplication.R;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,7 +22,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -34,6 +37,8 @@ public class PhotoPage extends Fragment {
     Button cameraButton, folderButton;
     TextView textPredictionOutput, textProbabilityOutput;
     ImageView imageView;
+    FrameLayout formLayout;
+
 
     int imageSize = 256;
 
@@ -41,7 +46,6 @@ public class PhotoPage extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_photo_page, container, false);
-
         // Initialize UI elements
         cameraButton = view.findViewById(R.id.camera_button);
         folderButton = view.findViewById(R.id.folder_button);
@@ -49,6 +53,8 @@ public class PhotoPage extends Fragment {
         textProbabilityOutput = view.findViewById(R.id.textProbabilityOutput);
         imageView = view.findViewById(R.id.main_image_display);
         Button seeTutoButton = view.findViewById(R.id.see_tuto);
+
+
 
         // Set up button click listeners
         cameraButton.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +75,7 @@ public class PhotoPage extends Fragment {
             public void onClick(View v) {
                 Intent folderIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(folderIntent, GALLERY_REQUEST_CODE);
+
             }
         });
 
@@ -114,6 +121,7 @@ public class PhotoPage extends Fragment {
                         ContentResolver resolver = getContext().getContentResolver();
                         Bitmap galleryImage = MediaStore.Images.Media.getBitmap(resolver, selectedImageUri);
                         imageView.setImageBitmap(galleryImage);
+
                         processImage(galleryImage); // Pass the image for further processing
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -122,6 +130,7 @@ public class PhotoPage extends Fragment {
                 }
                 break;
         }
+        showOverlayForm();
     }
 
     private void processImage(Bitmap bitmap) {
@@ -162,5 +171,10 @@ public class PhotoPage extends Fragment {
                 textPredictionOutput.setText("Camera permission denied. Please allow it to use this feature.");
             }
         }
+
+    }
+    public void showOverlayForm() {
+        OverlayDialogFragmentForm overlayDialogForm = new OverlayDialogFragmentForm();
+        overlayDialogForm.show(getParentFragmentManager(), "overlayDialogForm");
     }
 }

@@ -67,4 +67,10 @@
     <string name="galerie">Galerie</string>
     <string name="especes">Espèce(s) identifiée(s)</string>
     <string name="see_tuto">Revoir le tutoriel</string>
+    <string-array name="zone_array">
+        <item>Zone 1</item>
+        <item>Zone 2</item>
+        <item>Zone 3</item>
+        <item>Zone 4</item>
+    </string-array>
 </resources>
