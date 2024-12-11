@@ -29,14 +29,15 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <Button
-                style="@style/ButtonAppearance"
+            <TextView
+                android:paddingBottom="7dp"
+                android:paddingTop="7dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="33dp"
-                android:backgroundTint="@color/white"
+                android:background="@drawable/shape_transparent"
                 android:fontFamily="@font/inter"
                 android:text="@string/settings_gen"
                 android:textAlignment="center"
@@ -46,17 +47,11 @@
                 app:iconGravity="textStart" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/TopAppearance"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/shape_1"
-                android:fontFamily="@font/inter"
-                android:gravity="center"
-                android:text="@string/mode"
-                android:textAlignment="center"
-                android:textSize="16sp" />
+                android:text="@string/mode" />
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -74,7 +69,6 @@
                     android:layout_marginRight="15dp"
                     android:layout_marginLeft="15dp"
                     android:layout_marginBottom="15dp"
-                    android:backgroundTint="#517293"
                     android:text="@string/mode_sombre"
                     app:icon="@drawable/moon"
                     app:iconGravity="textStart"/>
@@ -86,17 +80,11 @@
 
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/TopAppearance"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/shape_1"
-                android:fontFamily="@font/inter"
-                android:gravity="center"
-                android:text="@string/tutorial"
-                android:textAlignment="center"
-                android:textSize="16sp" />
+                android:text="@string/tutorial"/>
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -114,7 +102,6 @@
                     android:layout_marginRight="15dp"
                     android:layout_marginLeft="15dp"
                     android:layout_marginBottom="15dp"
-                    android:backgroundTint="#517293"
                     android:text="@string/download"
                     app:icon="@drawable/folder"
                     app:iconGravity="textStart"/>
@@ -124,34 +111,26 @@
                     android:layout_height="wrap_content"/>
             </FrameLayout>
 
-            <Button
-                style="@style/ButtonAppearance"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginBottom="33dp"
-                android:backgroundTint="@color/white"
-                android:fontFamily="@font/inter"
-                android:text="@string/settings_conf"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                app:icon="@drawable/folder"
-                app:iconGravity="textStart" />
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/shape_1"
+                android:layout_marginBottom="33dp"
+                android:background="@drawable/shape"
                 android:fontFamily="@font/inter"
-                android:gravity="center"
-                android:text="@string/personal_data"
+                android:text="@string/settings_conf"
                 android:textAlignment="center"
-                android:textSize="16sp" />
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:iconGravity="textStart" />
+
+            <TextView
+                style="@style/TopAppearance"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/personal_data"/>
 
             <TextView
                 android:layout_width="match_parent"

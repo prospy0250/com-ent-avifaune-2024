@@ -47,21 +47,11 @@
 
             <TextView
                 android:id="@+id/becasseau"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                style="@style/TopAppearance"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/shape_1"
-                android:gravity="center|start"
-                android:paddingStart="12dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="10dp"
-                android:text="@string/becasseau"
-                android:textColor="#000000"
-                android:textSize="18sp" />
+                android:text="@string/becasseau" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -97,21 +87,11 @@
 
             <TextView
                 android:id="@+id/bernache"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                style="@style/TopAppearance"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/shape_1"
-                android:gravity="center|start"
-                android:paddingStart="12dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="10dp"
-                android:text="@string/bernache"
-                android:textColor="#000000"
-                android:textSize="18sp" />
+                android:text="@string/bernache" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -150,21 +130,11 @@
 
             <TextView
                 android:id="@+id/goeland"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                style="@style/TopAppearance"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/shape_1"
-                android:gravity="center|start"
-                android:paddingStart="12dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="10dp"
-                android:text="@string/goeland"
-                android:textColor="#000000"
-                android:textSize="18sp" />
+                android:text="@string/goeland" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -203,21 +173,11 @@
 
             <TextView
                 android:id="@+id/mouette"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                style="@style/TopAppearance"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/shape_1"
-                android:gravity="center|start"
-                android:paddingStart="12dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="10dp"
-                android:text="@string/mouette"
-                android:textColor="#000000"
-                android:textSize="18sp" />
+                android:text="@string/mouette" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -309,21 +269,11 @@
 
             <TextView
                 android:id="@+id/cormoran"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                style="@style/TopAppearance"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/shape_1"
-                android:gravity="center|start"
-                android:paddingStart="12dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="10dp"
-                android:text="@string/grand_cormoran"
-                android:textColor="#000000"
-                android:textSize="18sp" />
+                android:text="@string/grand_cormoran" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -362,21 +312,11 @@
 
             <TextView
                 android:id="@+id/foulque"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                style="@style/TopAppearance"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/shape_1"
-                android:gravity="center|start"
-                android:paddingStart="12dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="10dp"
-                android:text="@string/foulque_macroule"
-                android:textColor="#000000"
-                android:textSize="18sp" />
+                android:text="@string/foulque_macroule"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -415,21 +355,11 @@
 
             <TextView
                 android:id="@+id/tadorne"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                style="@style/TopAppearance"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/shape_1"
-                android:gravity="center|start"
-                android:paddingStart="12dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="10dp"
-                android:text="@string/tadorne_de_belon"
-                android:textColor="#000000"
-                android:textSize="18sp" />
+                android:text="@string/tadorne_de_belon" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -468,21 +398,11 @@
 
             <TextView
                 android:id="@+id/chevalier"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                style="@style/TopAppearance"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/shape_1"
-                android:gravity="center|start"
-                android:paddingStart="12dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="10dp"
-                android:text="@string/chevalier_gambette"
-                android:textColor="#000000"
-                android:textSize="18sp" />
+                android:text="@string/chevalier_gambette" />
 
             <LinearLayout
                 android:layout_width="match_parent"
