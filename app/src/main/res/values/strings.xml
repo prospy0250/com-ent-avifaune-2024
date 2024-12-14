@@ -79,4 +79,10 @@
     <string name="personal_data">Traitement des données personnelles</string>
     <string name="download">Télécharger</string>
     <string name="mode_sombre">Mode sombre</string>
+    <string-array name="zone_array">
+        <item>Zone 1</item>
+        <item>Zone 2</item>
+        <item>Zone 3</item>
+        <item>Zone 4</item>
+    </string-array>
 </resources>
