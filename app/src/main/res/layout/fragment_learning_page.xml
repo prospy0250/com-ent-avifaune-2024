@@ -7,16 +7,14 @@
 
 
     <TextView
+        style="@style/PageTitleAppearance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="60dp"
-        android:background="@drawable/polygon_5"
         android:paddingTop="30dp"
         android:paddingEnd="50dp"
         android:text="@string/apprendre"
-        android:textAlignment="center"
-        android:textColor="#1E1E1E"
         android:textSize="38sp" />
 
     <ScrollView
@@ -32,17 +30,16 @@
             <!-- Header Text -->
             <TextView
                 android:id="@+id/header_text"
+                style="@style/TopTopAppearance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="33dp"
-                android:background="@drawable/shape_transparent"
                 android:padding="10dp"
                 android:text="@string/learning_page_header"
                 android:textAlignment="center"
-                android:textColor="#000000"
                 android:textSize="18sp" />
 
             <TextView
@@ -54,14 +51,15 @@
                 android:text="@string/becasseau" />
 
             <LinearLayout
+                style="@style/BottomAppearance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="33dp"
-                android:background="@drawable/shape_2"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingVertical="12dp">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -77,7 +75,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="12dp"
-                    android:backgroundTint="#517293"
                     android:fontFamily="@font/inter"
                     android:paddingLeft="12dp"
                     android:paddingRight="12dp"
@@ -94,14 +91,15 @@
                 android:text="@string/bernache" />
 
             <LinearLayout
+                style="@style/BottomAppearance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="33dp"
-                android:background="@drawable/shape_2"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingVertical="12dp">
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:layout_width="120dp"
@@ -120,7 +118,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="12dp"
-                    android:backgroundTint="#517293"
                     android:fontFamily="@font/inter"
                     android:paddingLeft="12dp"
                     android:paddingRight="12dp"
@@ -137,14 +134,15 @@
                 android:text="@string/goeland" />
 
             <LinearLayout
+                style="@style/BottomAppearance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="33dp"
-                android:background="@drawable/shape_2"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingVertical="12dp">
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:layout_width="120dp"
@@ -163,7 +161,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="12dp"
-                    android:backgroundTint="#517293"
                     android:fontFamily="@font/inter"
                     android:paddingLeft="12dp"
                     android:paddingRight="12dp"
@@ -180,14 +177,15 @@
                 android:text="@string/mouette" />
 
             <LinearLayout
+                style="@style/BottomAppearance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="33dp"
-                android:background="@drawable/shape_2"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingVertical="12dp">
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:layout_width="120dp"
@@ -206,7 +204,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="12dp"
-                    android:backgroundTint="#517293"
                     android:fontFamily="@font/inter"
                     android:paddingLeft="12dp"
                     android:paddingRight="12dp"
@@ -216,30 +213,21 @@
 
             <TextView
                 android:id="@+id/pluvier"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                style="@style/TopAppearance"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/shape_1"
-                android:gravity="center|start"
-                android:paddingStart="12dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="10dp"
-                android:text="@string/pluvier_argente"
-                android:textColor="#000000"
-                android:textSize="18sp" />
+                android:text="@string/pluvier_argente" />
 
             <LinearLayout
+                style="@style/BottomAppearance"
+                android:paddingVertical="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="33dp"
-                android:background="@drawable/shape_2"
                 android:orientation="horizontal">
 
                 <com.google.android.material.imageview.ShapeableImageView
@@ -259,7 +247,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="12dp"
-                    android:backgroundTint="#517293"
                     android:fontFamily="@font/inter"
                     android:paddingLeft="12dp"
                     android:paddingRight="12dp"
@@ -276,13 +263,14 @@
                 android:text="@string/grand_cormoran" />
 
             <LinearLayout
+                style="@style/BottomAppearance"
+                android:paddingVertical="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="33dp"
-                android:background="@drawable/shape_2"
                 android:orientation="horizontal">
 
                 <com.google.android.material.imageview.ShapeableImageView
@@ -302,7 +290,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="12dp"
-                    android:backgroundTint="#517293"
                     android:fontFamily="@font/inter"
                     android:paddingLeft="12dp"
                     android:paddingRight="12dp"
@@ -316,16 +303,17 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="10dp"
-                android:text="@string/foulque_macroule"/>
+                android:text="@string/foulque_macroule" />
 
             <LinearLayout
+                style="@style/BottomAppearance"
+                android:paddingVertical="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="33dp"
-                android:background="@drawable/shape_2"
                 android:orientation="horizontal">
 
                 <com.google.android.material.imageview.ShapeableImageView
@@ -345,7 +333,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="12dp"
-                    android:backgroundTint="#517293"
                     android:fontFamily="@font/inter"
                     android:paddingLeft="12dp"
                     android:paddingRight="12dp"
@@ -362,13 +349,14 @@
                 android:text="@string/tadorne_de_belon" />
 
             <LinearLayout
+                style="@style/BottomAppearance"
+                android:paddingVertical="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="33dp"
-                android:background="@drawable/shape_2"
                 android:orientation="horizontal">
 
                 <com.google.android.material.imageview.ShapeableImageView
@@ -388,7 +376,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="12dp"
-                    android:backgroundTint="#517293"
                     android:fontFamily="@font/inter"
                     android:paddingLeft="12dp"
                     android:paddingRight="12dp"
@@ -405,13 +392,14 @@
                 android:text="@string/chevalier_gambette" />
 
             <LinearLayout
+                style="@style/BottomAppearance"
+                android:paddingVertical="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="33dp"
-                android:background="@drawable/shape_2"
                 android:orientation="horizontal">
 
                 <com.google.android.material.imageview.ShapeableImageView
@@ -431,7 +419,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="12dp"
-                    android:backgroundTint="#517293"
                     android:fontFamily="@font/inter"
                     android:paddingLeft="12dp"
                     android:paddingRight="12dp"
