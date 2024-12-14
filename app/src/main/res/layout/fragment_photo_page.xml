@@ -9,36 +9,33 @@
     <!-- To see the tutorial again -->
     <Button
         android:id="@+id/see_tuto"
+        style="@style/ButtonAppearance"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        style="@style/ButtonAppearance"
-        android:backgroundTint="#99FFFFFF"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="180dp"
-        android:text="@string/see_tuto"
-        android:textColor="@color/black"
         android:fontFamily="@font/inter"
-        android:textSize="15sp"/>
+        android:text="@string/see_tuto"
+        android:textSize="15sp" />
 
     <FrameLayout
+        style="@style/TopTopAppearance"
         android:layout_width="320dp"
         android:layout_height="386dp"
-        android:background="@drawable/shape_transparent"
         android:layout_gravity="center">
+
         <!-- Camera Button -->
         <Button
             android:id="@+id/camera_button"
+            style="@style/ButtonAppearance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/camera"
-            android:textSize="20sp"
-            android:fontFamily="@font/inter"
-            android:textColor="#D9D9D9"
-            android:backgroundTint="#517293"
-            style="@style/ButtonAppearance"
             android:layout_gravity="bottom|start"
             android:layout_marginStart="6dp"
-            android:drawableLeft="@drawable/camera_tiny"/>
+            android:drawableLeft="@drawable/camera_tiny"
+            android:fontFamily="@font/inter"
+            android:text="@string/camera"
+            android:textSize="20sp" />
 
         <!-- Folder Button -->
         <Button
@@ -46,90 +43,81 @@
             style="@style/ButtonAppearance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#517293"
-            android:text="@string/galerie"
-            android:textSize="20sp"
-            android:fontFamily="@font/inter"
-            android:textColor="#D9D9D9"
             android:layout_gravity="bottom|end"
+            android:layout_marginEnd="6dp"
             android:drawableLeft="@drawable/folder"
-            android:layout_marginEnd="6dp"/>
+            android:fontFamily="@font/inter"
+            android:text="@string/galerie"
+            android:textSize="20sp" />
 
         <!-- Main Image Display -->
         <ImageView
             android:id="@+id/main_image_display"
             android:layout_width="209dp"
             android:layout_height="209dp"
+            android:layout_gravity="center"
             app:layout_constraintBottom_toTopOf="@+id/textPredictionOutput"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.507"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.101"
-            tools:srcCompat="@tools:sample/avatars"
-            android:layout_gravity="center"/>
+            tools:srcCompat="@tools:sample/avatars" />
 
-        <TextView
+        <Button
+            style="@style/ButtonAppearance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/especes"
-            android:textSize="15sp"
-            android:textColor="#D9D9D9"
-            android:paddingHorizontal="40dp"
-            android:fontFamily="@font/inter"
             android:layout_gravity="center_horizontal|top"
             android:layout_marginTop="20dp"
-            android:background="@drawable/shape"
-            android:backgroundTint="#517293"/>
+            android:fontFamily="@font/inter"
+            android:paddingHorizontal="40dp"
+            android:text="@string/especes"
+            android:textSize="15sp" />
     </FrameLayout>
-    
+
     <!-- Prediction Text -->
     <TextView
         android:id="@+id/textPredictionOutput"
         android:layout_width="351dp"
         android:layout_height="28dp"
+        android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="146dp"
         android:text=""
         android:textColor="#F12B2B"
         android:textSize="17sp"
-        android:textStyle="bold"
-        android:layout_gravity="bottom|center_horizontal"/>
-    
+        android:textStyle="bold" />
+
     <!-- Accuracy Text -->
     <TextView
         android:id="@+id/textProbabilityOutput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="106dp"
         android:text=""
         android:textColor="#F12B2B"
         android:textSize="17sp"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginBottom="106dp"/>
+        android:textStyle="bold" />
 
     <!-- Prediction Label -->
     <TextView
         android:id="@+id/prediction_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
         android:layout_marginBottom="186dp"
         android:text="PREDICTION:"
         android:textColor="#D9D9D9"
         android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal|bottom"/>
+        android:textStyle="bold" />
 
     <TextView
+        style="@style/PageTitleAppearance"
         android:id="@+id/learning_page_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="60dp"
-        android:background="@drawable/polygon_5"
         android:paddingTop="30dp"
         android:paddingEnd="50dp"
-        android:text="@string/photo"
-        android:textAlignment="center"
-        android:textColor="#1E1E1E"
-        android:textSize="38sp" />
+        android:text="@string/photo" />
 </FrameLayout>

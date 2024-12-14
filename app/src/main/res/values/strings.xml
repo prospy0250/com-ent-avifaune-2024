@@ -67,6 +67,18 @@
     <string name="galerie">Galerie</string>
     <string name="especes">Espèce(s) identifiée(s)</string>
     <string name="see_tuto">Revoir le tutoriel</string>
+    <string name="csv_export_text">Exporter au format CSV</string>
+    <string name="nombre_de_photos_prises">Nombre de photos prises</string>
+    <string name="refreshed">Actualisé le :</string>
+    <string name="proportions">Proportions par zone</string>
+    <string name="nombre_ind">Nombre d\'invidus par espèce</string>
+    <string name="settings_gen">Paramètres généraux</string>
+    <string name="mode">Affichage</string>
+    <string name="tutorial">Télécharger le tutoriel approfondi</string>
+    <string name="settings_conf">Paramètres de confidentialité</string>
+    <string name="personal_data">Traitement des données personnelles</string>
+    <string name="download">Télécharger</string>
+    <string name="mode_sombre">Mode sombre</string>
     <string-array name="zone_array">
         <item>Zone 1</item>
         <item>Zone 2</item>

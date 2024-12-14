@@ -16,9 +16,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/logo2"
-        android:label="@string/sell_rad"
-        android:roundIcon="@mipmap/logo2_round"
+        android:icon="@mipmap/plunv_logo"
+        android:label="Pluñv"
+        android:roundIcon="@mipmap/plunv_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">

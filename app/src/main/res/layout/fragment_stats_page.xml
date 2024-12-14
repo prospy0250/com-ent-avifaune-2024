@@ -1,105 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- res/layout/fragment_stats.xml -->
-<FrameLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape_transparent"
-            android:layout_gravity="center"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginBottom="190dp"
-            android:text="@string/connexion_text"
-            android:textAlignment="center"
-            android:textSize="17sp"/>
-        <LinearLayout
-            android:layout_gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="15dp"
-            android:layout_margin="25dp"
-            android:background="@drawable/shape_transparent">
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/user_name"
-                android:textSize="17sp"/>
-
-            <!-- Username Field -->
-            <EditText
-                android:id="@+id/usernameField"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:padding="12dp"
-                android:layout_marginBottom="12dp"/>
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/password"
-                android:textSize="17sp"/>
-    <!--        <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/passwordField"
-                android:layout_width="match_parent"
-                android:layout_height="45dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </com.google.android.material.textfield.TextInputLayout>
-    -->
-
-            <!-- Password Field -->
-            <EditText
-                android:id="@+id/passwordField"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:padding="12dp"
-                android:layout_marginBottom="12dp"/>
-
-            <!-- Login Button -->
-            <Button
-                android:layout_marginTop="10dp"
-                android:id="@+id/loginButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/login"
-                android:padding="12dp"
-                android:layout_marginBottom="16dp"
-                android:layout_gravity="center_horizontal"
-                android:backgroundTint="#517293"
-                style="@style/ButtonAppearance"/>
-        </LinearLayout>
-    </FrameLayout>
+    android:orientation="vertical">
 
     <TextView
+        style="@style/PageTitleAppearance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="60dp"
-        android:background="@drawable/polygon_5"
         android:paddingTop="30dp"
         android:paddingEnd="50dp"
         android:text="@string/stats"
         android:textAlignment="center"
-        android:textColor="#1E1E1E"
         android:textSize="38sp" />
-</FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="16dp"
+        android:paddingBottom="80dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                style="@style/ButtonAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="33dp"
+                android:fontFamily="@font/inter"
+                android:text="@string/csv_export_text"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:icon="@drawable/folder"
+                app:iconGravity="textStart" />
+
+            <TextView
+                style="@style/TopAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/inter"
+                android:gravity="center"
+                android:text="@string/nombre_de_photos_prises"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <TextView
+                style="@style/BottomAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/refreshed"
+                android:gravity="end"
+                android:layout_marginEnd="66dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/inter"
+                android:textColor="@color/white"/>
+
+            <TextView
+                style="@style/TopAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/inter"
+                android:gravity="center"
+                android:text="@string/proportions"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <TextView
+                style="@style/BottomAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/refreshed"
+                android:gravity="end"
+                android:layout_marginEnd="66dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/inter"
+                android:textColor="@color/white"/>
+
+            <TextView
+                style="@style/TopAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/inter"
+                android:gravity="center"
+                android:text="@string/nombre_ind"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <TextView
+                style="@style/BottomAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/refreshed"
+                android:gravity="end"
+                android:layout_marginEnd="66dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/inter"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
