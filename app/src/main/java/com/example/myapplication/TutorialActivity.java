@@ -1,7 +1,6 @@
 package com.example.myapplication;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,11 +9,7 @@ import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.viewpager2.widget.ViewPager2;
-
-import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,8 +19,6 @@ public class TutorialActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
-
-        boolean fromPhotoPage = getIntent().getBooleanExtra("FROM_PHOTO_PAGE", false);
 
         ViewPager2 viewPager2=findViewById(R.id.tutorial_viewpager);
 
@@ -42,17 +35,10 @@ public class TutorialActivity extends AppCompatActivity {
         View.OnClickListener lTutoEndButton = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (fromPhotoPage) {
-                    Intent intent = new Intent(TutorialActivity.this, PublicActivity.class);
-                    intent.putExtra("TARGET_FRAGMENT", "PhotoPage");
-                    startActivity(intent);
-                    finish();
-                } else {
                     Intent intent = new Intent(TutorialActivity.this, HomeActivity.class);
                     intent.putExtra("PREFERENCES", false);
                     startActivity(intent);
                     finish();
-                }
             }
         };
         tutoEndButton.setOnClickListener(lTutoEndButton);

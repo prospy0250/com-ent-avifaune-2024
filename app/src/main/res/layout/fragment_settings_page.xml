@@ -40,29 +40,34 @@
                 android:layout_marginBottom="8dp"
                 android:text="@string/mode" />
 
-            <FrameLayout
+            <LinearLayout
                 style="@style/BottomAppearance"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
-                android:layout_marginBottom="23dp">
+                android:layout_marginBottom="23dp"
+                android:orientation="vertical">
 
                 <Button
-                    style="@style/ButtonAppearance"
+                    android:id="@+id/night_mode_button"
+                    style="@style/ModeSombreButtonAppearance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginRight="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:text="@string/mode_sombre"
+                    android:layout_marginBottom="5dp"
                     android:textSize="15sp"
                     app:icon="@drawable/moon"
                     app:iconGravity="textStart" />
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </FrameLayout>
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="@string/mode_sombre_texte" />
+            </LinearLayout>
 
 
             <TextView
@@ -73,20 +78,23 @@
                 android:text="@string/tutorial"
                 android:textSize="15sp" />
 
-            <FrameLayout
+            <LinearLayout
                 style="@style/BottomAppearance"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
-                android:layout_marginBottom="23dp">
+                android:layout_marginBottom="23dp"
+                android:orientation="vertical">
 
                 <Button
+                    android:id="@+id/download_tuto_button"
                     style="@style/ButtonAppearance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginRight="15dp"
-                    android:layout_marginBottom="15dp"
+                    android:layout_marginBottom="5dp"
                     android:text="@string/download"
                     android:textSize="15sp"
                     app:icon="@drawable/folder"
@@ -94,8 +102,11 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </FrameLayout>
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="@string/download_text" />
+            </LinearLayout>
 
             <TextView
                 style="@style/TopTopAppearance"

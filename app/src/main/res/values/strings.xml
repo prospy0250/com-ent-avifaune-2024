@@ -79,6 +79,8 @@
     <string name="personal_data">Traitement des données personnelles</string>
     <string name="download">Télécharger</string>
     <string name="mode_sombre">Mode sombre</string>
+    <string name="mode_sombre_texte">Le mode sombre économise votre batterie  et lutte contre la fatigue visuelle</string>
+    <string name="download_text">Télécharge un guide d’utilisation approfondi de l’application au format pdf</string>
     <string-array name="zone_array">
         <item>Zone 1</item>
         <item>Zone 2</item>

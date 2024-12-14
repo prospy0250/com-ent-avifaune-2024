@@ -30,6 +30,8 @@ public class PublicActivity extends AppCompatActivity {
                 bottomNavigationView.setSelectedItemId(R.id.navigation_statistiques);
                 break;
             case "SettingsPage":
+                Intent intent = new Intent(PublicActivity.this, PublicActivity.class);
+                intent.putExtra("TARGET_FRAGMENT", "SettingsPage");
                 loadFragment(new SettingsPage());
                 bottomNavigationView.setSelectedItemId(R.id.navigation_parametres);
                 break;
