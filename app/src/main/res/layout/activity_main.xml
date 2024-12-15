@@ -1,49 +1,49 @@
 <!-- Auto layout, variables, and unit scale are not yet supported -->
 
 <FrameLayout
+    style="@style/MainBackground"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/welcomescre"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clipToOutline="true"
-    android:background="@color/white">
+    android:clipToOutline="true" >
 
 
     <ImageView
+        style="@style/NameMain"
         android:id="@+id/imageView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/plunv"
         android:paddingHorizontal="70dp"
         android:layout_gravity="bottom"
         android:layout_marginBottom="240dp"/>
 
     <ImageView
+        style="@style/LogoMain"
         android:id="@+id/imageView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/logo_main"
         android:layout_gravity="center"
         android:paddingBottom="430dp"
         android:paddingTop="174dp"
         android:paddingHorizontal="37dp"/>
 
     <ImageView
+        style="@style/SubNameMain"
         android:id="@+id/imageView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/avi_main"
         android:paddingHorizontal="60dp"
         android:layout_gravity="bottom"
         android:layout_marginBottom="220dp"/>
 
     <ImageView
+        style="@style/BottomPolygonMain"
         android:id="@+id/imageView9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/polygon_9"
         android:layout_gravity="bottom"/>
 
     <ImageView

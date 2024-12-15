@@ -9,35 +9,34 @@
     tools:context=".PublicActivity">
 
     <ImageView
-        android:alpha="0.4"
         android:id="@+id/image_1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:alpha="0.4"
         android:scaleType="centerCrop"
         android:src="@drawable/image_1"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
+        style="@style/BigPolygon"
         android:id="@+id/polygon_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start|center_vertical"
         android:layout_marginBottom="25dp"
-        android:alpha="0.75"
-        android:src="@drawable/polygon_2" />
+        android:alpha="0.75" />
 
     <ImageView
+        style="@style/BottomPolygon"
         android:id="@+id/polygon_4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scaleType="fitXY"
-        android:src="@drawable/polygon_4"
-        android:alpha="0.75"
         android:layout_gravity="center_horizontal|bottom"
-        />
+        android:alpha="0.75"
+        android:scaleType="fitXY" />
 
     <ImageView
         android:id="@+id/image_2"
@@ -45,111 +44,102 @@
         android:layout_height="48.6dp"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="20dp"
-        android:src="@drawable/image_2"
-        />
+        android:src="@drawable/image_2" />
 
     <ImageView
+        style="@style/MiniRectangle"
         android:id="@+id/rectangle_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginBottom="266dp"
-        android:src="@drawable/rectangle_1"
-        />
+        android:layout_marginBottom="266dp" />
 
     <Button
         android:id="@+id/learning_button"
+        style="@style/ButtonAppearance"
         android:layout_width="168dp"
         android:layout_height="124dp"
+        android:layout_gravity="center_vertical"
         android:layout_marginStart="34dp"
         android:layout_marginBottom="266dp"
-        android:layout_gravity="center_vertical"
-        android:backgroundTint="#517293"
         android:drawableLeft="@drawable/book"
         android:fontFamily="@font/inter"
-        android:text="@string/learn"
-        android:textSize="20sp"
-        android:rotation="-5"
-        android:paddingRight="5dp"
         android:paddingLeft="5dp"
-        style="@style/ButtonAppearance"/>
+        android:paddingRight="5dp"
+        android:rotation="-5"
+        android:text="@string/learn"
+        android:textSize="20sp" />
 
     <ImageView
+        style="@style/MiniRectangle"
         android:id="@+id/rectangle_6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginBottom="97dp"
-        android:src="@drawable/rectangle_1"
-        />
-
-    <Button
-        android:id="@+id/settings_button"
-        android:layout_width="168dp"
-        android:layout_height="124dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="241dp"
-        android:layout_gravity="center_vertical"
-        android:backgroundTint="#517293"
-        android:drawableLeft="@drawable/param"
-        android:fontFamily="@font/inter"
-        android:text="@string/settings"
-        android:textSize="20sp"
-        android:rotation="-5"
-        android:paddingRight="5dp"
-        android:paddingLeft="5dp"
-        style="@style/ButtonAppearance"/>
+        android:layout_marginBottom="97dp" />
 
     <ImageView
-        android:id="@+id/rectangle_7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginTop="72dp"
-        android:src="@drawable/rectangle_1"
-        />
-
-    <Button
-        android:id="@+id/photo_button"
-        android:layout_width="168dp"
-        android:layout_height="124dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="72dp"
-        android:layout_gravity="center_vertical"
-        android:backgroundTint="#517293"
-        android:drawableLeft="@drawable/camera"
-        android:fontFamily="@font/inter"
-        android:text="@string/photo"
-        android:textSize="20sp"
-        android:rotation="-5"
-        android:paddingRight="3.75dp"
-        android:paddingLeft="3.75dp"
-        style="@style/ButtonAppearance"/>
-
-    <ImageView
+        style="@style/MiniRectangle"
         android:id="@+id/rectangle_8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
+        android:layout_marginTop="241dp" />
+
+    <Button
+        android:id="@+id/settings_button"
+        style="@style/ButtonAppearance"
+        android:layout_width="168dp"
+        android:layout_height="124dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="34dp"
         android:layout_marginTop="241dp"
-        android:src="@drawable/rectangle_1"
-        />
+        android:drawableLeft="@drawable/param"
+        android:fontFamily="@font/inter"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:rotation="-5"
+        android:text="@string/settings"
+        android:textSize="20sp" />
+
+    <ImageView
+        style="@style/MiniRectangle"
+        android:id="@+id/rectangle_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="72dp" />
+
+    <Button
+        android:id="@+id/photo_button"
+        style="@style/ButtonAppearance"
+        android:layout_width="168dp"
+        android:layout_height="124dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="72dp"
+        android:drawableLeft="@drawable/camera"
+        android:fontFamily="@font/inter"
+        android:paddingLeft="3.75dp"
+        android:paddingRight="3.75dp"
+        android:rotation="-5"
+        android:text="@string/photo"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/stats_button"
+        style="@style/ButtonAppearance"
         android:layout_width="168dp"
         android:layout_height="124dp"
+        android:layout_gravity="center_vertical"
         android:layout_marginStart="34dp"
         android:layout_marginBottom="97dp"
-        android:layout_gravity="center_vertical"
-        android:backgroundTint="#517293"
         android:drawableLeft="@drawable/stats"
         android:fontFamily="@font/inter"
-        android:text="@string/stats"
-        android:textSize="20sp"
-        android:rotation="-5"
-        android:paddingRight="3.75dp"
         android:paddingLeft="3.75dp"
-        style="@style/ButtonAppearance"/>
+        android:paddingRight="3.75dp"
+        android:rotation="-5"
+        android:text="@string/stats"
+        android:textSize="20sp" />
 
 </FrameLayout>

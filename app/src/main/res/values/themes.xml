@@ -14,6 +14,14 @@
         <item name="iconTint">#D9D9D9</item>
     </style>
 
+    <style name="ModeSombreButtonAppearance" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="backgroundTint">#517293</item>
+        <item name="iconTint">#D9D9D9</item>
+        <item name="android:text">"Mode sombre"</item>
+    </style>
+
     <style name="RoundedImageView" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">8dp</item>
@@ -24,7 +32,7 @@
     <style name="TopAppearance" parent="">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">#000000</item>
+        <item name="android:textColor">#1E1E1E</item>
         <item name="android:background">@drawable/shape_transparent_top_rounded</item>
         <item name="fontFamily">@font/inter</item>
         <item name="android:gravity">center</item>
@@ -34,4 +42,99 @@
         <item name="android:paddingBottom">7dp</item>
     </style>
 
+    <style name="BottomAppearance" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/shape_transparent_bottom_rounded</item>
+        <item name="android:textColor">#D9D9D9</item>
+    </style>
+
+    <style name="TopTopAppearance" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/shape_transparent</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">#1E1E1E</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="PageTitleAppearance" parent="">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:background">@drawable/polygon_5</item>
+        <item name="android:textColor">#1E1E1E</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">38sp</item>
+    </style>
+
+    <style name="MiniRectangle" parent="">
+        <item name="android:src">@drawable/rectangle_1</item>
+    </style>
+
+    <style name="BigPolygon" parent="">
+        <item name="android:src">@drawable/polygon_2</item>
+    </style>
+
+    <style name="BottomPolygon" parent="">
+        <item name="android:src">@drawable/polygon_4</item>
+    </style>
+
+    <style name="BottomPolygonMain" parent="">
+        <item name="android:src">@drawable/polygon_9</item>
+    </style>
+
+    <style name="LogoMain" parent="">
+        <item name="android:src">@drawable/logo_main</item>
+    </style>
+
+    <style name="MainBackground" parent="">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="NameMain" parent="">
+        <item name="android:src">@drawable/plunv</item>
+    </style>
+    
+    <style name="SubNameMain" parent="">
+        <item name="android:src">@drawable/avi_main</item>
+    </style>
+
+    <style name="BottomNavTint" parent="">
+        <item name="android:background">#E0517293</item>
+        <item name="itemIconTint">#ABABAB</item>
+    </style>
+
+    <style name="OverlayAppearance" parent="">
+        <item name="android:background">@drawable/shape_transparent</item>
+        <item name="android:textColor">#1E1E1E</item>
+    </style>
+
+    <style name="TutorialTitles" parent="">
+        <item name="android:background">@drawable/shape_transparent_blue</item>
+    </style>
+
+    <style name="TutoPage1" parent="">
+        <item name="android:src">@drawable/polygon_6</item>
+    </style>
+
+    <style name="TutoLine1" parent="">
+        <item name="android:src">@drawable/line_1</item>
+    </style>
+
+    <style name="TutoPage2" parent="">
+        <item name="android:src">@drawable/polygon_7</item>
+    </style>
+
+    <style name="TutoLine2" parent="">
+        <item name="android:src">@drawable/line_2</item>
+    </style>
+
+    <style name="TutoPage3" parent="">
+        <item name="android:src">@drawable/polygon_8</item>
+    </style>
+
+    <style name="TutoLine3" parent="">
+        <item name="android:src">@drawable/line_3</item>
+    </style>
 </resources>

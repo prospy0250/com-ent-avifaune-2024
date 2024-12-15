@@ -5,23 +5,23 @@
     android:layout_height="match_parent">
 
     <ImageView
+        style="@style/TutoPage3"
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitCenter"
-        app:srcCompat="@drawable/polygon_8" />
+        android:scaleType="fitCenter" />
 
     <ImageView
+        style="@style/TutoLine3"
         android:id="@+id/imageView4"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="219.3dp"
-        app:srcCompat="@drawable/line_3" />
+        android:paddingBottom="219.3dp" />
 
     <TextView
+        style="@style/TutorialTitles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape_transparent_blue"
         android:text="@string/tuto_app"
         android:textAlignment="center"
         android:textSize="26sp"
@@ -37,14 +37,14 @@
         android:layout_marginTop="160dp"/>
 
     <FrameLayout
+        style="@style/TopTopAppearance"
         android:layout_width="319dp"
         android:layout_height="440dp"
         android:layout_gravity="center"
         android:layout_marginTop="90dp">
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/shape_transparent"/>
+            android:layout_height="match_parent"/>
 
         <ImageView
             android:layout_width="wrap_content"

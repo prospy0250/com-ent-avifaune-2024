@@ -1,5 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<resources xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
@@ -9,9 +8,19 @@
     <style name="ButtonAppearance" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerRadius">8dp</item>
-        <item name="backgroundTint">#1E1E1E</item>
+        <item name="backgroundTint">#565758</item>
         <item name="iconTint">#D9D9D9</item>
         <item name="android:textColor">#D9D9D9</item>
+    </style>
+
+
+    <style name="ModeSombreButtonAppearance" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="backgroundTint">#565758</item>
+        <item name="iconTint">#D9D9D9</item>
+        <item name="android:textColor">#D9D9D9</item>
+        <item name="android:text">"Mode clair"</item>
     </style>
 
     <style name="TopAppearance" parent="">
@@ -25,5 +34,101 @@
         <item name="android:textSize">16sp</item>
         <item name="android:paddingTop">7dp</item>
         <item name="android:paddingBottom">7dp</item>
+    </style>
+
+    <style name="BottomAppearance" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/shape_transparent_black_bottom_rounded</item>
+        <item name="android:textColor">#1E1E1E</item>
+    </style>
+
+    <style name="TopTopAppearance" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/shape_transparent_black</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">#D9D9D9</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="PageTitleAppearance" parent="">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:background">@drawable/polygon_10</item>
+        <item name="android:textColor">#D9D9D9</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">38sp</item>
+    </style>
+
+    <style name="MiniRectangle" parent="">
+        <item name="android:src">@drawable/rectangle_2</item>
+    </style>
+
+    <style name="BigPolygon" parent="">
+        <item name="android:src">@drawable/polygon_11</item>
+    </style>
+
+    <style name="BottomPolygon" parent="">
+        <item name="android:src">@drawable/polygon_12</item>
+    </style>
+
+    <style name="BottomPolygonMain" parent="">
+        <item name="android:src">@drawable/polygon_12</item>
+    </style>
+
+    <style name="LogoMain" parent="">
+        <item name="android:src">@drawable/logo_main_black</item>
+    </style>
+
+    <style name="MainBackground">
+        <item name="android:background">#3f3f3f</item>
+    </style>
+
+    <style name="NameMain" parent="">
+        <item name="android:src">@drawable/plunv_black</item>
+    </style>
+
+    <style name="SubNameMain">
+        <item name="android:src">@drawable/avi_main_black</item>
+    </style>
+
+    <style name="BottomNavTint">
+        <item name="android:background">#E0121212</item>
+        <item name="itemIconTint">#D9D9D9</item>
+    </style>
+
+    <style name="OverlayAppearance" parent="">
+        <item name="android:background">@drawable/shape_transparent_black</item>
+        <item name="android:textColor">#D9D9D9</item>
+    </style>
+
+    <style name="TutorialTitles" parent="">
+        <item name="android:background">@drawable/shape_transparent_black</item>
+    </style>
+
+    <style name="TutoPage1" parent="">
+        <item name="android:src">@drawable/polygon_13</item>
+    </style>
+
+    <style name="TutoLine1" parent="">
+        <item name="android:src">@drawable/line_4</item>
+    </style>
+
+    <style name="TutoPage2" parent="">
+        <item name="android:src">@drawable/polygon_14</item>
+    </style>
+
+    <style name="TutoLine2" parent="">
+        <item name="android:src">@drawable/line_5</item>
+    </style>
+
+    <style name="TutoPage3" parent="">
+        <item name="android:src">@drawable/polygon_15</item>
+    </style>
+
+    <style name="TutoLine3" parent="">
+        <item name="android:src">@drawable/line_6</item>
     </style>
 </resources>
