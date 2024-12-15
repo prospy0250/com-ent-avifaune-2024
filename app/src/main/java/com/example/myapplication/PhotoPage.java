@@ -145,6 +145,8 @@ public class PhotoPage extends Fragment {
 
         } catch (IOException e) {
             throw new RuntimeException(e);
+        } catch (NoSpeciesRecognizedException e) {
+            textPredictionOutput.setText("Cette espèce pas encore répertoriée");
         }
     }
 
