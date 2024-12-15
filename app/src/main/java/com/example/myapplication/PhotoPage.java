@@ -110,6 +110,7 @@ public class PhotoPage extends Fragment {
                 if (cameraImage != null) {
                     imageView.setImageBitmap(cameraImage);
                     processImage(cameraImage); // Pass the image for further processing
+                    showOverlayForm();
                 }
                 break;
 
@@ -130,7 +131,7 @@ public class PhotoPage extends Fragment {
                 }
                 break;
         }
-        showOverlayForm();
+
     }
 
     private void processImage(Bitmap bitmap) {
@@ -154,6 +155,8 @@ public class PhotoPage extends Fragment {
 
         } catch (IOException e) {
             throw new RuntimeException(e);
+        } catch (NoSpeciesRecognizedException e) {
+            textPredictionOutput.setText("Cette espèce n'est pas encore répertoriée.");
         }
     }
 
