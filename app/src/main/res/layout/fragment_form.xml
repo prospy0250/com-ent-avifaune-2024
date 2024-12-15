@@ -1,96 +1,103 @@
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/form_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/shape"
-    android:padding="20dp"
     tools:context=".PhotoPage">
 
-    <!-- Title for the form -->
-    <TextView
-        android:id="@+id/form_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Saisissez les détails du localisation"
-        android:textSize="18sp"
-        android:textColor="#333333"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp" />
-
-    <!-- Location Input -->
-    <EditText
-        android:id="@+id/location_input"
+    <LinearLayout
+        android:id="@+id/form_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:hint="Localisation (qu'est ce que vous voyez?)"
-        android:padding="20dp"
-        android:textColor="#000000" />
+        android:background="@drawable/shape_transparent"
+        android:orientation="vertical"
+        android:padding="20dp">
 
-    <TextView
-        android:id="@+id/form_zonage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Saisissez la zone correspondante"
-        android:textSize="18sp"
-        android:textColor="#333333"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp" />
+        <TextView
+            android:id="@+id/prediction_output"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/display_prediction_text" />
 
-    <EditText
-        android:id="@+id/zone_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:hint="Dans quelle zone vous situez"
-        android:padding="20dp"
-        android:textColor="#000000" />
-    <Button
-        android:id="@+id/form_zoneInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Plus d'info sur les zones"
-        android:textSize="12sp"
-        android:textColor="#4B0076"
-        android:layout_gravity="right"
-        android:backgroundTint="#FFFFFF"
-        android:layout_marginTop="5dp" />
+        <TextView
+            android:id="@+id/form_zonage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="@string/corresponding_zone_text"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-    <!-- Date Picker (Optional) -->
+        <Spinner
+            android:id="@+id/zone_selector"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp" />
 
-    <!-- Submit Button -->
-    <TextView
-        android:id="@+id/form_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Saisissez la date de la prise de la photo"
-        android:textSize="18sp"
-        android:textColor="#333333"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="5dp" />
+        <Button
+            android:id="@+id/form_zoneInfo"
+            style="@style/ButtonAppearance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="5dp"
+            android:text="@string/zone_info_text"
+            android:textSize="12sp" />
 
-    <DatePicker
-        android:id="@+id/date_picker"
-        android:layout_width="wrap_content"
-        android:layout_height="250dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp" />
+        <!-- Title for the form -->
+        <TextView
+            android:id="@+id/form_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="@string/desc_text"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/submit_form_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:text="Envoyer"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="#517293"
-        style="@style/ButtonAppearance" />
-</LinearLayout>
+        <!-- Location Input -->
+        <EditText
+            android:id="@+id/location_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:hint="@string/locate_text"
+            android:padding="20dp"
+            android:textColor="#000000" />
+
+        <!-- Date Picker (Optional) -->
+
+        <!-- Submit Button -->
+        <TextView
+            android:id="@+id/form_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:text="@string/photo_time_text"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TimePicker
+
+            android:id="@+id/time_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp" />
+
+        <Button
+            android:id="@+id/submit_form_button"
+            style="@style/ButtonAppearance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#517293"
+            android:text="@string/send"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+</ScrollView>
+

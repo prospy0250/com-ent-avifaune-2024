@@ -34,6 +34,8 @@ public class PhotoPage extends Fragment {
     private static final int GALLERY_REQUEST_CODE = 1;
     private static final int CAMERA_PERMISSION_REQUEST_CODE = 100;
 
+    private static String predictionOutput;
+
     Button cameraButton, folderButton;
     TextView textPredictionOutput, textProbabilityOutput;
     ImageView imageView;
@@ -109,7 +111,8 @@ public class PhotoPage extends Fragment {
                 Bitmap cameraImage = (Bitmap) data.getExtras().get("data");
                 if (cameraImage != null) {
                     imageView.setImageBitmap(cameraImage);
-                    processImage(cameraImage); // Pass the image for further processing
+                    processImage(cameraImage);
+                    showOverlayForm();// Pass the image for further processing
                 }
                 break;
 
@@ -130,7 +133,6 @@ public class PhotoPage extends Fragment {
                 }
                 break;
         }
-        showOverlayForm();
     }
 
     private void processImage(Bitmap bitmap) {
@@ -150,8 +152,9 @@ public class PhotoPage extends Fragment {
             scaledBitmap = Bitmap.createScaledBitmap(annotatedImage, (int) width, (int) height, true);
             imageView.setImageBitmap(scaledBitmap);
             //TextView textView = getView().findViewById(R.id.textView2);
-            textPredictionOutput.setText(outputPredictedImage.toString());
 
+            predictionOutput=outputPredictedImage.toString();
+            textPredictionOutput.setText(outputPredictedImage.toString());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -173,8 +176,13 @@ public class PhotoPage extends Fragment {
         }
 
     }
+
     public void showOverlayForm() {
         OverlayDialogFragmentForm overlayDialogForm = new OverlayDialogFragmentForm();
         overlayDialogForm.show(getParentFragmentManager(), "overlayDialogForm");
+    }
+
+    public static String getPredictionOutput() {
+        return predictionOutput;
     }
 }
