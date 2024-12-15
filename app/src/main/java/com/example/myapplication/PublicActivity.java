@@ -4,12 +4,10 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.Objects;
 
 public class PublicActivity extends AppCompatActivity {
     @Override
@@ -32,12 +30,14 @@ public class PublicActivity extends AppCompatActivity {
                 bottomNavigationView.setSelectedItemId(R.id.navigation_statistiques);
                 break;
             case "SettingsPage":
+                Intent intent = new Intent(PublicActivity.this, PublicActivity.class);
+                intent.putExtra("TARGET_FRAGMENT", "SettingsPage");
                 loadFragment(new SettingsPage());
                 bottomNavigationView.setSelectedItemId(R.id.navigation_parametres);
                 break;
             case "PhotoPage":
                 loadFragment(new PhotoPage());
-                bottomNavigationView.setSelectedItemId(R.id.navigation_documenter);
+                bottomNavigationView.setSelectedItemId(R.id.navigation_identifier);
                 break;
         }
 
@@ -52,8 +52,13 @@ public class PublicActivity extends AppCompatActivity {
                 selectedFragment = new StatsPage();
             } else if (item.getItemId() == R.id.navigation_parametres) {
                 selectedFragment = new SettingsPage();
-            } else {
+            } else if (item.getItemId() == R.id.navigation_identifier) {
                 selectedFragment = new PhotoPage();
+            } else {
+                selectedFragment=null;
+                Intent intent = new Intent(PublicActivity.this, HomeActivity.class);
+                startActivity(intent);
+                finish();
             }
             loadFragment(selectedFragment);
             return true;

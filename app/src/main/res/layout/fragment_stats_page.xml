@@ -1,84 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- res/layout/fragment_stats.xml -->
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_gravity="center"
-        android:layout_width="match_parent"
+    <TextView
+        style="@style/PageTitleAppearance"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="15dp"
-        android:layout_margin="25dp"
-        android:background="@drawable/shape">
-        <TextView
-            android:layout_marginTop="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="60dp"
+        android:paddingTop="30dp"
+        android:paddingEnd="50dp"
+        android:text="@string/stats"
+        android:textAlignment="center"
+        android:textSize="38sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="16dp"
+        android:paddingBottom="80dp">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/user_name"
-            android:textSize="17sp"/>
-        <!--        <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp">
+            android:orientation="vertical">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/usernameField"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </com.google.android.material.textfield.TextInputLayout>
-        -->
-
-        <!-- Username Field -->
-        <EditText
-            android:id="@+id/usernameField"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:padding="12dp"
-            android:layout_marginBottom="12dp"/>
-
-        <TextView
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/password"
-            android:textSize="17sp"/>
-<!--        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/passwordField"
-            android:layout_width="match_parent"
-            android:layout_height="45dp">
-
-            <com.google.android.material.textfield.TextInputEditText
+            <Button
+                style="@style/ButtonAppearance"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </com.google.android.material.textfield.TextInputLayout>
--->
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="33dp"
+                android:fontFamily="@font/inter"
+                android:text="@string/csv_export_text"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:icon="@drawable/folder"
+                app:iconGravity="textStart" />
 
-        <!-- Password Field -->
-        <EditText
-            android:id="@+id/passwordField"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:padding="12dp"
-            android:layout_marginBottom="12dp"/>
+            <TextView
+                style="@style/TopAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/inter"
+                android:gravity="center"
+                android:text="@string/nombre_de_photos_prises"
+                android:textAlignment="center"
+                android:textSize="16sp" />
 
-        <!-- Login Button -->
-        <Button
-            android:layout_marginTop="10dp"
-            android:id="@+id/loginButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/login"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp"
-            android:layout_gravity="center_horizontal"
-            android:backgroundTint="#517293"
-            style="@style/ButtonAppearance"/>
-    </LinearLayout>
+            <TextView
+                style="@style/BottomAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="10dp"/>
 
-</FrameLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/refreshed"
+                android:gravity="end"
+                android:layout_marginEnd="66dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/inter"
+                android:textColor="@color/white"/>
+
+            <TextView
+                style="@style/TopAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/inter"
+                android:gravity="center"
+                android:text="@string/proportions"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <TextView
+                style="@style/BottomAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/refreshed"
+                android:gravity="end"
+                android:layout_marginEnd="66dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/inter"
+                android:textColor="@color/white"/>
+
+            <TextView
+                style="@style/TopAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/inter"
+                android:gravity="center"
+                android:text="@string/nombre_ind"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <TextView
+                style="@style/BottomAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/refreshed"
+                android:gravity="end"
+                android:layout_marginEnd="66dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/inter"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

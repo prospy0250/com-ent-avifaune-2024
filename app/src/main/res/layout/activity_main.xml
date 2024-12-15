@@ -1,104 +1,56 @@
 <!-- Auto layout, variables, and unit scale are not yet supported -->
 
 <FrameLayout
+    style="@style/MainBackground"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/welcomescre"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clipToOutline="true"
-    android:background="@color/black">
+    android:clipToOutline="true" >
+
 
     <ImageView
-        android:alpha="0.4"
-        android:id="@+id/image_1"
+        style="@style/NameMain"
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="70dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="240dp"/>
+
+    <ImageView
+        style="@style/LogoMain"
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingBottom="430dp"
+        android:paddingTop="174dp"
+        android:paddingHorizontal="37dp"/>
+
+    <ImageView
+        style="@style/SubNameMain"
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="60dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="220dp"/>
+
+    <ImageView
+        style="@style/BottomPolygonMain"
+        android:id="@+id/imageView9"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/image_1"/>
-
-
-    <TextView
-        android:id="@+id/sell_rad"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="14dp"
-        android:fontFamily="@font/mclaren"
-        android:layout_gravity="start|center"
-        android:text="@string/sell_rad"
-        android:textAppearance="@style/sell_rad" />
+        android:scaleType="fitXY"
+        android:layout_gravity="bottom"/>
 
     <ImageView
-        android:id="@+id/image_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/imageView10"
+        android:layout_width="147dp"
+        android:layout_height="49dp"
+        app:srcCompat="@drawable/image_2"
         android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="50dp"
-        android:src="@drawable/image_2"
-        />
-
-    <ImageView
-        android:id="@+id/polygon_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/polygon_3"
-        android:alpha="0.75"
-        android:layout_gravity="end|bottom"
-        />
-
-    <ImageView
-        android:id="@+id/rectangle_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start|center_vertical"
-        android:layout_marginTop="250dp"
-        android:layout_marginStart="33dp"
-        android:alpha="0.75"
-        android:background="@drawable/rectangle_5"
-        />
-
-    <ImageView
-        android:id="@+id/rectangle_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:layout_marginTop="167dp"
-        android:layout_marginEnd="250dp"
-        android:alpha="0.75"
-        android:background="@drawable/rectangle_5"
-        />
-
-    <ImageView
-        android:id="@+id/rectangle_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="300dp"
-        android:alpha="0.75"
-        android:background="@drawable/rectangle_5"
-        />
-
-    <ImageView
-        android:id="@+id/rectangle_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|center_vertical"
-        android:layout_marginTop="75dp"
-        android:layout_marginEnd="70dp"
-        android:alpha="0.75"
-        android:background="@drawable/rectangle_5"
-        />
-
-    <ImageView
-        android:id="@+id/polygon_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/polygon_1"
-        android:layout_gravity="end|center_vertical"
-        android:layout_marginBottom="25dp"
-        android:alpha="0.75"
-        />
-
+        android:layout_marginBottom="18.4dp"/>
 </FrameLayout>

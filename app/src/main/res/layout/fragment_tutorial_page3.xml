@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        style="@style/TutoPage3"
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter" />
+
+    <ImageView
+        style="@style/TutoLine3"
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="219.3dp" />
+
+    <TextView
+        style="@style/TutorialTitles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tuto_app"
+        android:textAlignment="center"
+        android:textSize="26sp"
+        android:fontFamily="@font/inter"
+        android:paddingHorizontal="27dp"
+        android:paddingVertical="13dp"
+        android:textColor="#D9D9D9"
+        android:textStyle="bold"
+        android:rotation="-5"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="250dp"
+        android:layout_marginLeft="-25dp"
+        android:layout_marginTop="160dp"/>
+
+    <FrameLayout
+        style="@style/TopTopAppearance"
+        android:layout_width="319dp"
+        android:layout_height="440dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="90dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/learn"
+            android:paddingLeft="26dp"
+            android:paddingRight="63dp"
+            android:paddingBottom="96dp"
+            android:paddingTop="58dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/tuto_page_app"
+            android:textSize="16sp"
+            android:fontFamily="@font/inter"
+            android:paddingTop="12dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tuto_becasseau_desc"
+            android:paddingTop="318dp"
+            android:paddingRight="21dp"
+            android:paddingBottom="32dp"
+            android:paddingLeft="56dp"/>
+    </FrameLayout>
+</FrameLayout>

@@ -1,13 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:orientation="vertical">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dashboard Page"
-        android:textSize="24sp" />
+        style="@style/PageTitleAppearance"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="60dp"
+        android:paddingTop="30dp"
+        android:paddingEnd="50dp"
+        android:text="@string/settings" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="16dp"
+        android:paddingBottom="80dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TopTopAppearance"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="33dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:text="@string/settings_gen" />
+
+            <TextView
+                style="@style/TopAppearance"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/mode" />
+
+            <LinearLayout
+                style="@style/BottomAppearance"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="23dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/night_mode_button"
+                    style="@style/ModeSombreButtonAppearance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="15sp"
+                    app:icon="@drawable/moon"
+                    app:iconGravity="textStart" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="@string/mode_sombre_texte" />
+            </LinearLayout>
+
+
+            <TextView
+                style="@style/TopAppearance"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/tutorial"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                style="@style/BottomAppearance"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="23dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/download_tuto_button"
+                    style="@style/ButtonAppearance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/download"
+                    android:textSize="15sp"
+                    app:icon="@drawable/folder"
+                    app:iconGravity="textStart" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="@string/download_text" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/TopTopAppearance"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="33dp"
+                android:text="@string/settings_conf" />
+
+            <TextView
+                style="@style/TopAppearance"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/personal_data" />
+
+            <TextView
+                style="@style/BottomAppearance"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="10dp" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
