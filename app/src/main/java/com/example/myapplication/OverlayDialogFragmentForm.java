@@ -47,7 +47,7 @@ public class OverlayDialogFragmentForm extends DialogFragment {
 
     private String surroundingsDescription;
 
-    private String unknownSpeciesDescription;
+    private String unknownSpeciesDescription="";
 
     // Linking the Google Forms
     private final Retrofit retrofit = new Retrofit.Builder().baseUrl("https://docs.google.com/").addConverterFactory(GsonConverterFactory.create()).build();
@@ -114,12 +114,14 @@ public class OverlayDialogFragmentForm extends DialogFragment {
         // Set the time picker settings
         TimePicker timePicker = view.findViewById(R.id.time_picker);
         timePicker.setIs24HourView(true);
-        time = timePicker.getHour() + ":" + timePicker.getMinute();
+        if (timePicker.getHour()<10) time = "0" + timePicker.getHour() + ":" + timePicker.getMinute();
+        else time = timePicker.getHour() + ":" + timePicker.getMinute();
         // If time is changed we retain its value
         timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker timePicker, int i, int i1) {
-                time = timePicker.getHour() + ":" + timePicker.getMinute();
+                if (timePicker.getHour()<10) time = "0" + timePicker.getHour() + ":" + timePicker.getMinute();
+                else time = timePicker.getHour() + ":" + timePicker.getMinute();
             }
         });
 
@@ -129,6 +131,7 @@ public class OverlayDialogFragmentForm extends DialogFragment {
             TextView predictionDisplay = view.findViewById(R.id.prediction_output);
             String predictionText = "Nous avons détecté sur votre photo :\n" + finalPredictionOutput;
             predictionDisplay.setText(predictionText);
+            unknownSpeciesDescription="Pas d'espèces fournies.";
         } else {
             EditText unknownSpeciesInput = view.findViewById(R.id.unknown_species_input);
             unknownSpeciesInput.setVisibility(EditText.VISIBLE);
@@ -267,9 +270,10 @@ public class OverlayDialogFragmentForm extends DialogFragment {
                                 getDialog().dismiss();
                             } else {
                                 if (!isZoneSelected) Toast.makeText(getContext(), "Veuillez sélectionner une zone", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "Erreur : " + response.code(), Toast.LENGTH_SHORT).show();
                             }
                         } catch (Exception e) {
-                            Toast.makeText(getContext(), "Error: ${e.message}", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
 
