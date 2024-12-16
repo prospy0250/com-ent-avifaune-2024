@@ -88,6 +88,8 @@
     <string name="zone_info_text">Plus d\'info sur les zones</string>
     <string name="corresponding_zone_text">Saisissez la zone correspondante</string>
     <string name="display_prediction_text">Si rien ne s\'affiche ici, c\'est que la détection d\'espèces n\'a pas fonctionné.</string>
+    <string name="unknown_species_text">Si rien ne s\'affiche en haut de l\'écran et que vous connaissez l\'espèce en question, écrivez cela ici. Sinon écrivez je ne sais pas.</string>
+    <string name="unknown_species_question">Quelle est cette espèce ?</string>
     <string-array name="zone_array">
         <item>Zone 1</item>
         <item>Zone 2</item>
