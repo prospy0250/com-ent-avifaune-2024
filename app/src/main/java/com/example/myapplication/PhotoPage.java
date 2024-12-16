@@ -26,6 +26,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -144,7 +145,6 @@ public class PhotoPage extends Fragment {
 
         try {
             TestModeleTflite testModeleTflite = new TestModeleTflite(this.getContext());
-
             OutputPredictedImage outputPredictedImage = testModeleTflite.recognizeSpeciesClass(bitmap);
             Bitmap annotatedImage = outputPredictedImage.getAnnotatedImage();
             double height = 1.5 * annotatedImage.getHeight();
@@ -152,12 +152,13 @@ public class PhotoPage extends Fragment {
             scaledBitmap = Bitmap.createScaledBitmap(annotatedImage, (int) width, (int) height, true);
             imageView.setImageBitmap(scaledBitmap);
             //TextView textView = getView().findViewById(R.id.textView2);
-
             predictionOutput=outputPredictedImage.toString();
             textPredictionOutput.setText(outputPredictedImage.toString());
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (NoSpeciesRecognizedException e) {
+            Toast.makeText(getContext(), "L'application n'a pas reconnu d'espèce connue sur votre photo", Toast.LENGTH_SHORT).show();
+            predictionOutput="nothing";
             textPredictionOutput.setText("Cette espèce n'est pas encore répertoriée.");
         }
     }

@@ -32,7 +32,6 @@ public class OverlayDialogFragmentForm extends DialogFragment {
     private boolean isZoneSelected = false;
 
     private String time;
-    private boolean isTimeSelected = false;
 
     private String finalPredictionOutput;
 
@@ -47,6 +46,8 @@ public class OverlayDialogFragmentForm extends DialogFragment {
     private String chevalierCounter = "0";
 
     private String surroundingsDescription;
+
+    private String unknownSpeciesDescription;
 
     // Linking the Google Forms
     private final Retrofit retrofit = new Retrofit.Builder().baseUrl("https://docs.google.com/").addConverterFactory(GsonConverterFactory.create()).build();
@@ -73,12 +74,21 @@ public class OverlayDialogFragmentForm extends DialogFragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        Button zoneInfoButton = view.findViewById(R.id.form_zoneInfo);
+        zoneInfoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                OverlayDialogFragmentZonage overlayDialogZonage = new OverlayDialogFragmentZonage();
+                overlayDialogZonage.show(getParentFragmentManager(), "overlayDialogZonage");
+            }
+        });
+
 
         // Select the dropdown menu
         Spinner zoneSelector = view.findViewById(R.id.zone_selector);
 
         // Create the list of options
-        String[] items = new String[]{"Zone 1\n","Zone 2\n","Zone 3\n","Zone 4\n",
+        String[] items = new String[]{"Veuillez sélectionner une zone", "Zone 1", "Zone 2", "Zone 3", "Zone 4",
                 "Je ne suis pas dans la rade de Lorient"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this.getContext(),
                 android.R.layout.simple_spinner_item, items);
@@ -91,7 +101,7 @@ public class OverlayDialogFragmentForm extends DialogFragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 zoneSelected = parent.getItemAtPosition(position).toString();
-                isZoneSelected = true;
+                if (!zoneSelected.equals(items[0])) isZoneSelected = true;
             }
 
             @Override
@@ -110,15 +120,40 @@ public class OverlayDialogFragmentForm extends DialogFragment {
             @Override
             public void onTimeChanged(TimePicker timePicker, int i, int i1) {
                 time = timePicker.getHour() + ":" + timePicker.getMinute();
-                isTimeSelected = true;
             }
         });
 
         // Display the result in the form
         finalPredictionOutput = PhotoPage.getPredictionOutput();
-        TextView predictionDisplay = view.findViewById(R.id.prediction_output);
-        String predictionText = "Nous avons détecté sur votre photo :\n" + finalPredictionOutput;
-        predictionDisplay.setText(predictionText);
+        if (finalPredictionOutput != "nothing") {
+            TextView predictionDisplay = view.findViewById(R.id.prediction_output);
+            String predictionText = "Nous avons détecté sur votre photo :\n" + finalPredictionOutput;
+            predictionDisplay.setText(predictionText);
+        } else {
+            EditText unknownSpeciesInput = view.findViewById(R.id.unknown_species_input);
+            unknownSpeciesInput.setVisibility(EditText.VISIBLE);
+
+            TextView unknownSpecies = view.findViewById(R.id.unknown_species);
+            unknownSpecies.setVisibility(TextView.VISIBLE);
+
+            unknownSpeciesInput.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                    unknownSpeciesDescription="Pas d'espèces fournies.";
+                }
+
+                @Override
+                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                    unknownSpeciesDescription = unknownSpeciesInput.getText().toString();
+                }
+
+                @Override
+                public void afterTextChanged(Editable editable) {
+                    if (unknownSpeciesDescription.isBlank()) unknownSpeciesDescription="Pas d'espèces fournies.";
+                }
+            });
+        }
+
 
         String[] numberBySpecies = finalPredictionOutput.split("\n");
 
@@ -221,35 +256,17 @@ public class OverlayDialogFragmentForm extends DialogFragment {
             @Override
             public void onClick(View view) {
                 Call<Void> call = api.sendFormData(becasseauCounter, bernacheCounter, goelandCounter, mouetteCounter, pluvierCounter, cormoranCounter,
-                        foulqueCounter, tadorneCounter, chevalierCounter, "test", zoneSelected.split("\n")[0], surroundingsDescription, "14:30");
+                        foulqueCounter, tadorneCounter, chevalierCounter, unknownSpeciesDescription, zoneSelected, surroundingsDescription, time);
 
                 call.enqueue(new Callback<Void>() {
                     @Override
                     public void onResponse(Call<Void> call, Response<Void> response) {
                         try {
                             if (response.isSuccessful()) {
-                                Toast.makeText(getContext(), "Successful", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "Merci pour votre participation !", Toast.LENGTH_SHORT).show();
+                                getDialog().dismiss();
                             } else {
-                                Toast.makeText(getContext(), "Unsuccessful" + response.code() , Toast.LENGTH_SHORT).show();
-
-                                new AlertDialog.Builder(getContext())
-                                        .setTitle("Delete entry")
-                                        .setMessage(becasseauCounter + "\n" + bernacheCounter + "\n" + goelandCounter + "\n" + mouetteCounter+ "\n"
-                                                        + pluvierCounter + "\n" + cormoranCounter + "\n" + foulqueCounter + "\n"
-                                                + tadorneCounter + "\n" + chevalierCounter + "\n" + "test" + "\n" + zoneSelected.split("\n")[0] + "\n" + surroundingsDescription + "\n" + "14:30")
-
-                                        // Specifying a listener allows you to take an action before dismissing the dialog.
-                                        // The dialog is automatically dismissed when a dialog button is clicked.
-                                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                                            public void onClick(DialogInterface dialog, int which) {
-                                                // Continue with delete operation
-                                            }
-                                        })
-
-                                        // A null listener allows the button to dismiss the dialog and take no further action.
-                                        .setNegativeButton(android.R.string.no, null)
-                                        .setIcon(android.R.drawable.ic_dialog_alert)
-                                        .show();
+                                if (!isZoneSelected) Toast.makeText(getContext(), "Veuillez sélectionner une zone", Toast.LENGTH_SHORT).show();
                             }
                         } catch (Exception e) {
                             Toast.makeText(getContext(), "Error: ${e.message}", Toast.LENGTH_SHORT).show();
@@ -259,7 +276,7 @@ public class OverlayDialogFragmentForm extends DialogFragment {
                     @Override
                     public void onFailure(Call<Void> call, Throwable t) {
                         try {
-                            Toast.makeText(getContext(), "Error: ${t.message}", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "Il vous faut être connecté à Internet pour continuer", Toast.LENGTH_SHORT).show();
                         } catch (Exception e) {
                             Toast.makeText(getContext(), "Error: ${e.message}", Toast.LENGTH_SHORT).show();
                         }
