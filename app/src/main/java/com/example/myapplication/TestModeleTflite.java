@@ -246,22 +246,24 @@ public class TestModeleTflite {
         return annotateImage(inputImage, boxes);
     }
 
-    public OutputPredictedImage recognizeSpeciesClass(Bitmap inputImage){
+    public OutputPredictedImage recognizeSpeciesClass(Bitmap inputImage) throws NoSpeciesRecognizedException {
         //ArrayList<String> speciesNames = new ArrayList<>();
         Map<String, Integer> predictionResults = new HashMap<>();
         TensorBuffer outputBuffer = predict(inputImage);
         List<BoundingBox> boxes = processOutput(outputBuffer);
-        for(BoundingBox box:boxes){
-            if(predictionResults.containsKey(box.clsName)){
-                int previousNumber = predictionResults.get(box.clsName);
-                predictionResults.put(box.clsName, previousNumber + 1);
-            }else{
-                predictionResults.put(box.clsName, 1);
-            }
+        if(boxes != null){
+            for(BoundingBox box:boxes){
+                if(predictionResults.containsKey(box.clsName)){
+                    int previousNumber = predictionResults.get(box.clsName);
+                    predictionResults.put(box.clsName, previousNumber + 1);
+                }else{
+                    predictionResults.put(box.clsName, 1);
+                }
 
-        }
-        Bitmap annotatedImage =  annotateImage(inputImage, boxes);
-        return new OutputPredictedImage(annotatedImage, predictionResults);
+            }
+            Bitmap annotatedImage =  annotateImage(inputImage, boxes);
+            return new OutputPredictedImage(annotatedImage, predictionResults);
+        }else throw new NoSpeciesRecognizedException();
     }
 
 
