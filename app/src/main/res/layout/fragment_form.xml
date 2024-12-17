@@ -10,7 +10,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/shape_transparent"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="20dp"
+        android:layout_gravity="center">
 
         <TextView
             android:id="@+id/prediction_output"
@@ -72,12 +73,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:text="@string/unknown_species_text"
             android:gravity="center"
+            android:text="@string/unknown_species_text"
             android:textColor="#333333"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <EditText
             android:id="@+id/unknown_species_input"
@@ -88,23 +89,6 @@
             android:padding="20dp"
             android:textColor="#000000"
             android:visibility="gone" />
-
-        <TextView
-            android:id="@+id/form_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="15dp"
-            android:text="@string/photo_time_text"
-            android:textColor="#333333"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TimePicker
-            android:id="@+id/time_picker"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp" />
 
         <Button
             android:id="@+id/submit_form_button"

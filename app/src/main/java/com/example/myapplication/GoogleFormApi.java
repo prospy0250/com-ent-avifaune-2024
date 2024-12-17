@@ -25,8 +25,7 @@ public interface GoogleFormApi {
             // Other fields
             @Field("entry.311834827") String unknownSpecies,
             @Field("entry.1710251376") String zone,
-            @Field("entry.1284627072") String surroundings,
-            @Field("entry.1321597415") String time
+            @Field("entry.1284627072") String surroundings
     );
 }
 
