@@ -3,25 +3,25 @@
         android:checkable="true"
         android:id="@+id/navigation_apprendre"
         android:icon="@drawable/book"
-        android:title="Apprendre" />
+        android:title="@string/learn" />
     <item
         android:checkable="true"
         android:id="@+id/navigation_statistiques"
         android:icon="@drawable/stats"
-        android:title="Stats" />
+        android:title="@string/stats" />
     <item
         android:checkable="true"
         android:id="@+id/navigation_accueil"
         android:icon="@drawable/home"
-        android:title="Accueil"/>
+        android:title="@string/accueil"/>
     <item
         android:checkable="true"
         android:id="@+id/navigation_identifier"
         android:icon="@drawable/camera"
-        android:title="Documenter" />
+        android:title="@string/photo" />
     <item
         android:checkable="true"
         android:id="@+id/navigation_parametres"
         android:icon="@drawable/param"
-        android:title="Paramètres" />
+        android:title="@string/settings" />
 </menu>
