@@ -37,7 +37,7 @@ public class PhotoPage extends Fragment {
 
     private static String predictionOutput;
 
-    Button cameraButton, folderButton;
+    Button cameraButton, folderButton, identifiedSpeciesButton;
     TextView textPredictionOutput, textProbabilityOutput;
     ImageView imageView;
     FrameLayout formLayout;
@@ -48,12 +48,14 @@ public class PhotoPage extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        predictionOutput = null;
         View view = inflater.inflate(R.layout.fragment_photo_page, container, false);
         // Initialize UI elements
         cameraButton = view.findViewById(R.id.camera_button);
         folderButton = view.findViewById(R.id.folder_button);
+        identifiedSpeciesButton = view.findViewById(R.id.identified_species_button);
         textPredictionOutput = view.findViewById(R.id.textPredictionOutput);
-        textProbabilityOutput = view.findViewById(R.id.textProbabilityOutput);
+        //textProbabilityOutput = view.findViewById(R.id.textProbabilityOutput);
         imageView = view.findViewById(R.id.main_image_display);
         Button seeTutoButton = view.findViewById(R.id.see_tuto);
 
@@ -82,6 +84,17 @@ public class PhotoPage extends Fragment {
             }
         });
 
+        identifiedSpeciesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(predictionOutput == null){
+                    Toast.makeText(getContext(), "Veuillez prendre une photo ou charger une image depuis votre gallerie.", Toast.LENGTH_LONG).show();
+                }
+                else Toast.makeText(getContext(), predictionOutput, Toast.LENGTH_LONG).show();
+
+
+            }
+        });
         View.OnClickListener lSeeTutoButton = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,6 +103,8 @@ public class PhotoPage extends Fragment {
                 startActivity(intent);
                 getActivity().finish();
             }
+
+
         };
 
         seeTutoButton.setOnClickListener(lSeeTutoButton);
