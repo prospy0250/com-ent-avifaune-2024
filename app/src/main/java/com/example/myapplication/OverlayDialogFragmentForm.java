@@ -31,8 +31,6 @@ public class OverlayDialogFragmentForm extends DialogFragment {
     private String zoneSelected;
     private boolean isZoneSelected = false;
 
-    private String time;
-
     private String finalPredictionOutput;
 
     private String becasseauCounter = "0";
@@ -107,21 +105,6 @@ public class OverlayDialogFragmentForm extends DialogFragment {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 isZoneSelected = false;
-            }
-        });
-
-
-        // Set the time picker settings
-        TimePicker timePicker = view.findViewById(R.id.time_picker);
-        timePicker.setIs24HourView(true);
-        if (timePicker.getHour()<10) time = "0" + timePicker.getHour() + ":" + timePicker.getMinute();
-        else time = timePicker.getHour() + ":" + timePicker.getMinute();
-        // If time is changed we retain its value
-        timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
-            @Override
-            public void onTimeChanged(TimePicker timePicker, int i, int i1) {
-                if (timePicker.getHour()<10) time = "0" + timePicker.getHour() + ":" + timePicker.getMinute();
-                else time = timePicker.getHour() + ":" + timePicker.getMinute();
             }
         });
 
@@ -259,7 +242,7 @@ public class OverlayDialogFragmentForm extends DialogFragment {
             @Override
             public void onClick(View view) {
                 Call<Void> call = api.sendFormData(becasseauCounter, bernacheCounter, goelandCounter, mouetteCounter, pluvierCounter, cormoranCounter,
-                        foulqueCounter, tadorneCounter, chevalierCounter, unknownSpeciesDescription, zoneSelected, surroundingsDescription, time);
+                        foulqueCounter, tadorneCounter, chevalierCounter, unknownSpeciesDescription, zoneSelected, surroundingsDescription);
 
                 call.enqueue(new Callback<Void>() {
                     @Override

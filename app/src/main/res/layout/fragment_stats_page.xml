@@ -25,10 +25,11 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/export_button"
                 style="@style/ButtonAppearance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -42,98 +43,12 @@
                 app:icon="@drawable/folder"
                 app:iconGravity="textStart" />
 
-            <TextView
-                style="@style/TopAppearance"
+            <WebView
+                android:id="@+id/sheets_view"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/inter"
-                android:gravity="center"
-                android:text="@string/nombre_de_photos_prises"
-                android:textAlignment="center"
-                android:textSize="16sp" />
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="40dp" />
 
-            <TextView
-                style="@style/BottomAppearance"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginBottom="10dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/refreshed"
-                android:gravity="end"
-                android:layout_marginEnd="66dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/inter"
-                android:textColor="@color/white"/>
-
-            <TextView
-                style="@style/TopAppearance"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/inter"
-                android:gravity="center"
-                android:text="@string/proportions"
-                android:textAlignment="center"
-                android:textSize="16sp" />
-
-            <TextView
-                style="@style/BottomAppearance"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginBottom="10dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/refreshed"
-                android:gravity="end"
-                android:layout_marginEnd="66dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/inter"
-                android:textColor="@color/white"/>
-
-            <TextView
-                style="@style/TopAppearance"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/inter"
-                android:gravity="center"
-                android:text="@string/nombre_ind"
-                android:textAlignment="center"
-                android:textSize="16sp" />
-
-            <TextView
-                style="@style/BottomAppearance"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginBottom="10dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/refreshed"
-                android:gravity="end"
-                android:layout_marginEnd="66dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/inter"
-                android:textColor="@color/white"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

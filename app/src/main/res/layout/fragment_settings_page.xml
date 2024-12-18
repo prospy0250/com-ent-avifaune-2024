@@ -113,20 +113,29 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="33dp"
-                android:text="@string/settings_conf" />
+                android:text="@string/auteurs" />
 
             <TextView
                 style="@style/TopAppearance"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginBottom="8dp"
-                android:text="@string/personal_data" />
+                android:text="@string/collab" />
 
-            <TextView
+            <LinearLayout
                 style="@style/BottomAppearance"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="23dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="@string/authors" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
