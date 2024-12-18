@@ -65,6 +65,7 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <Button
+            android:id="@+id/identified_species_button"
             style="@style/ButtonAppearance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -72,11 +73,17 @@
             android:layout_marginTop="20dp"
             android:fontFamily="@font/inter"
             android:paddingHorizontal="40dp"
-            android:text="@string/especes"
+            android:text="Voir espèce(s) identifiée(s)"
             android:textSize="15sp" />
     </FrameLayout>
 
     <!-- Prediction Text -->
+
+    <!-- Accuracy Text -->
+
+    <!-- Prediction Label -->
+
+
     <TextView
         android:id="@+id/textPredictionOutput"
         android:layout_width="351dp"
@@ -88,19 +95,7 @@
         android:textSize="17sp"
         android:textStyle="bold" />
 
-    <!-- Accuracy Text -->
-    <TextView
-        android:id="@+id/textProbabilityOutput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginBottom="106dp"
-        android:text=""
-        android:textColor="#F12B2B"
-        android:textSize="17sp"
-        android:textStyle="bold" />
 
-    <!-- Prediction Label -->
     <TextView
         android:id="@+id/prediction_label"
         android:layout_width="wrap_content"
@@ -120,5 +115,13 @@
         android:paddingTop="30dp"
         android:paddingEnd="50dp"
         android:text="@string/photo" />
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine" />
 
 </FrameLayout>
