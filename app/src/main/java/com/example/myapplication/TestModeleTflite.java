@@ -219,7 +219,7 @@ public class TestModeleTflite {
             );
             canvas.drawRect(rect, paint);
             canvas.drawText(box.clsName, rect.left, rect.bottom, textPaint);
-            canvas.drawText(new StringBuilder().append("prob : ").append(String.format("%.2f", box.cnf)).toString(), rect.left, rect.top, textPaint);
+            //canvas.drawText(new StringBuilder().append("prob : ").append(String.format("%.2f", box.cnf)).toString(), rect.left, rect.top, textPaint);
         }
 
         return mutableBitmap;
@@ -248,16 +248,18 @@ public class TestModeleTflite {
 
     public OutputPredictedImage recognizeSpeciesClass(Bitmap inputImage) throws NoSpeciesRecognizedException {
         //ArrayList<String> speciesNames = new ArrayList<>();
-        Map<String, Integer> predictionResults = new HashMap<>();
+        List<RecognizeSpecie> specieBoxes= new ArrayList<RecognizeSpecie>();
+        Map<String, RecognizeSpecie> predictionResults = new HashMap<>();
+
         TensorBuffer outputBuffer = predict(inputImage);
         List<BoundingBox> boxes = processOutput(outputBuffer);
         if(boxes != null){
             for(BoundingBox box:boxes){
                 if(predictionResults.containsKey(box.clsName)){
-                    int previousNumber = predictionResults.get(box.clsName);
-                    predictionResults.put(box.clsName, previousNumber + 1);
+                    predictionResults.get(box.clsName).getSpecieBoxes().add(box);
                 }else{
-                    predictionResults.put(box.clsName, 1);
+                    predictionResults.put(box.clsName, new RecognizeSpecie(box.clsName, new ArrayList<BoundingBox>()));
+                    predictionResults.get(box.clsName).getSpecieBoxes().add(box);
                 }
 
             }

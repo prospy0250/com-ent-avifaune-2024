@@ -41,6 +41,7 @@ public class PhotoPage extends Fragment {
     TextView textPredictionOutput, textProbabilityOutput;
     ImageView imageView;
     FrameLayout formLayout;
+    OutputPredictedImage outputPredictedImage;
 
 
     int imageSize = 256;
@@ -90,8 +91,14 @@ public class PhotoPage extends Fragment {
                 if(predictionOutput == null){
                     Toast.makeText(getContext(), "Veuillez prendre une photo ou charger une image depuis votre gallerie.", Toast.LENGTH_LONG).show();
                 }
-                else Toast.makeText(getContext(), predictionOutput, Toast.LENGTH_LONG).show();
-
+                if(outputPredictedImage != null){
+                    ResultsFragment resultsFragment = new ResultsFragment(outputPredictedImage.getPredictionResults());
+                    requireActivity().getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.fragment_container, resultsFragment) // Assuming you have a container in your activity layout
+                            .addToBackStack(null)
+                            .commit();
+                }
 
             }
         });
@@ -160,7 +167,7 @@ public class PhotoPage extends Fragment {
 
         try {
             TestModeleTflite testModeleTflite = new TestModeleTflite(this.getContext());
-            OutputPredictedImage outputPredictedImage = testModeleTflite.recognizeSpeciesClass(bitmap);
+            outputPredictedImage = testModeleTflite.recognizeSpeciesClass(bitmap);
             Bitmap annotatedImage = outputPredictedImage.getAnnotatedImage();
             double height = 1.5 * annotatedImage.getHeight();
             double width = 1.5 * annotatedImage.getWidth();
