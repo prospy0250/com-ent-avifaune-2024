@@ -25,10 +25,13 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.util.Map;
 
 public class PhotoPage extends Fragment {
     private static final int CAMERA_REQUEST_CODE = 3;
@@ -41,7 +44,10 @@ public class PhotoPage extends Fragment {
     TextView textPredictionOutput, textProbabilityOutput;
     ImageView imageView;
     FrameLayout formLayout;
+    FrameLayout tableResultsLayout;
     OutputPredictedImage outputPredictedImage;
+    private Map<String, RecognizeSpecie> predictionResults;
+    TableLayout tablePredictionResults;
 
 
     int imageSize = 256;
@@ -55,8 +61,9 @@ public class PhotoPage extends Fragment {
         cameraButton = view.findViewById(R.id.camera_button);
         folderButton = view.findViewById(R.id.folder_button);
         identifiedSpeciesButton = view.findViewById(R.id.identified_species_button);
-        textPredictionOutput = view.findViewById(R.id.textPredictionOutput);
-        //textProbabilityOutput = view.findViewById(R.id.textProbabilityOutput);
+        tablePredictionResults = view.findViewById(R.id.results_table1);
+        tableResultsLayout = view.findViewById(R.id.tableResultsLayout);
+        tableResultsLayout.setVisibility(View.INVISIBLE);
         imageView = view.findViewById(R.id.main_image_display);
         Button seeTutoButton = view.findViewById(R.id.see_tuto);
 
@@ -85,6 +92,7 @@ public class PhotoPage extends Fragment {
             }
         });
 
+        /*
         identifiedSpeciesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -101,7 +109,7 @@ public class PhotoPage extends Fragment {
                 }
 
             }
-        });
+        });*/
         View.OnClickListener lSeeTutoButton = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -165,6 +173,8 @@ public class PhotoPage extends Fragment {
         // You can pass this `scaledBitmap` to your prediction program
         Log.d("PhotoPage", "Bitmap processed for prediction: " + scaledBitmap.toString());
 
+
+
         try {
             TestModeleTflite testModeleTflite = new TestModeleTflite(this.getContext());
             outputPredictedImage = testModeleTflite.recognizeSpeciesClass(bitmap);
@@ -173,16 +183,74 @@ public class PhotoPage extends Fragment {
             double width = 1.5 * annotatedImage.getWidth();
             scaledBitmap = Bitmap.createScaledBitmap(annotatedImage, (int) width, (int) height, true);
             imageView.setImageBitmap(scaledBitmap);
-            //TextView textView = getView().findViewById(R.id.textView2);
             predictionOutput=outputPredictedImage.toString();
-            textPredictionOutput.setText(outputPredictedImage.toString());
+            predictionResults = outputPredictedImage.getPredictionResults();
+            tableResultsLayout.setVisibility(View.VISIBLE);
+            populateTable();
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (NoSpeciesRecognizedException e) {
-            Toast.makeText(getContext(), "L'application n'a pas reconnu d'espèce connue sur votre photo", Toast.LENGTH_SHORT).show();
+            tableResultsLayout.setVisibility(View.INVISIBLE);
+            Toast.makeText(getContext(), "L'application n'a pas reconnu d'espèce connue sur votre photo.", Toast.LENGTH_LONG).show();
             predictionOutput="nothing";
-            textPredictionOutput.setText("Cette espèce n'est pas encore répertoriée.");
+            //textPredictionOutput.setText("Cette espèce n'est pas encore répertoriée.");
         }
+    }
+
+    /**
+     * Adds a header row to the table layout.
+     */
+    private void addHeaderRow() {
+        TableRow headerRow = new TableRow(getContext());
+        headerRow.setBackgroundColor(getResources().getColor(R.color.myBlue)); // Optional: Add header styling
+        addTableCell(headerRow, "Espèce");
+        addTableCell(headerRow, "Total individus");
+        addTableCell(headerRow, "Précision(%)");
+        tablePredictionResults.addView(headerRow);
+    }
+
+    /**
+     * Populates the table with rows based on the prediction results.
+     */
+    private void populateTable() {
+        if (predictionResults != null) {
+            // Clear the table to remove any previous rows
+            tablePredictionResults.removeAllViews();
+
+            // Add the header row
+            addHeaderRow();
+
+            for (Map.Entry<String, RecognizeSpecie> entry : predictionResults.entrySet()) {
+                TableRow dataRow = new TableRow(getContext());
+
+                RecognizeSpecie specie = entry.getValue();
+
+                addTableCell(dataRow, entry.getKey()); // Species name
+                addTableCell(dataRow, String.valueOf(specie.getSpecieBoxes().size())); // Count
+                addTableCell(dataRow, String.format("%.2f", specie.getAverageProbability())); // Average probability
+
+                tablePredictionResults.addView(dataRow);
+            }
+        } else {
+            // If no data exists, clear and add a message row
+            tablePredictionResults.removeAllViews(); // Clear existing rows
+            TableRow emptyRow = new TableRow(getContext());
+            addTableCell(emptyRow, "No data available");
+            tablePredictionResults.addView(emptyRow);
+        }
+    }
+
+
+    /**
+     * Adds a cell to a given table row.
+     */
+    private void addTableCell(TableRow row, String text) {
+        TextView textView = new TextView(getContext());
+        textView.setText(text);
+        textView.setPadding(16, 16, 16, 16);
+
+        textView.setTextColor(getResources().getColor(R.color.white)); // Optional: Add text styling
+        row.addView(textView);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -17,6 +18,7 @@ import java.util.Map;
 public class ResultsFragment extends Fragment {
 
     private Map<String, RecognizeSpecie> predictionResults;
+    private Button backToPredictionButton;
 
     // Constructor to receive prediction results
     public ResultsFragment(Map<String, RecognizeSpecie> predictionResults) {
@@ -29,6 +31,7 @@ public class ResultsFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_prediction_results, container, false);
 
+        backToPredictionButton = view.findViewById(R.id.backToPrediction);
         // Reference the TableLayout
         TableLayout tableLayout = view.findViewById(R.id.results_table);
 
@@ -38,7 +41,19 @@ public class ResultsFragment extends Fragment {
         // Populate the table with prediction results
         populateTable(tableLayout);
 
+        // Set up back button functionality
+        backToPredictionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                requireActivity()
+                        .getSupportFragmentManager()
+                        .popBackStack(); // Navigate back to the previous fragment
+            }
+        });
+
         return view;
+
+
     }
 
     /**
@@ -46,11 +61,12 @@ public class ResultsFragment extends Fragment {
      */
     private void addHeaderRow(TableLayout tableLayout) {
         TableRow headerRow = new TableRow(getContext());
-        headerRow.setBackgroundColor(getResources().getColor(R.color.logo2_background)); // Optional: Add header styling
+        headerRow.setBackgroundColor(getResources().getColor(R.color.myBlue)); // Optional: Add header styling
         addTableCell(headerRow, "Espèce");
         addTableCell(headerRow, "Total individus");
         addTableCell(headerRow, "Précision(%)");
         tableLayout.addView(headerRow);
+
     }
 
     /**

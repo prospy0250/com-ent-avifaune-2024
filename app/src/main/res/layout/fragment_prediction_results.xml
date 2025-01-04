@@ -10,7 +10,7 @@
     <FrameLayout
         style="@style/TopTopAppearance"
         android:layout_width="362dp"
-        android:layout_height="93dp"
+        android:layout_height="120dp"
         android:layout_gravity="center">
 
         <ScrollView
@@ -36,6 +36,30 @@
 
 
     </FrameLayout>
+
+    <TextView
+        android:id="@+id/prediction_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="320dp"
+        android:text="Détails de la Prédiction:"
+        android:textColor="#D9D9D9"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/backToPrediction"
+        style="@style/ButtonAppearance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="300dp"
+        android:fontFamily="@font/inter"
+        android:text="Retour"
+        android:textSize="20sp" />
+
+
 
 
 
