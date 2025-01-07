@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.tutorials;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,9 @@ import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager2.widget.ViewPager2;
+
+import com.example.myapplication.HomeActivity;
+import com.example.myapplication.R;
 
 import java.util.Arrays;
 import java.util.List;

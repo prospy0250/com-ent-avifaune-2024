@@ -1,7 +1,6 @@
-package com.example.myapplication;
+package com.example.myapplication.recognation_logic;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 
 import java.util.Map;
 
@@ -10,21 +9,20 @@ import java.util.Map;
  */
 public class OutputPredictedImage {
     private Bitmap annotatedImage;
-    private Map<String, Integer> predictionResults;
+    private Map<String, RecognizeSpecie> predictionResults;
 
-    public OutputPredictedImage(Bitmap annotatedImage, Map<String,Integer> predictionResults){
+    public OutputPredictedImage(Bitmap annotatedImage, Map<String,RecognizeSpecie> predictionResults){
         this.annotatedImage = annotatedImage;
         this.predictionResults = predictionResults;
     }
 
+
     @Override
     public String toString(){
         StringBuilder result = new StringBuilder();
-        for (Map.Entry<String, Integer> entry : predictionResults.entrySet()) {
+        for (Map.Entry<String, RecognizeSpecie> entry : predictionResults.entrySet()) {
             // Append the key (species) and value (probability) in the specified format
-            result.append(entry.getKey())
-                    .append(" : ")
-                    .append(entry.getValue()) // Format the float to 2 decimal places
+            result.append(entry.getValue().toString()) // Format the float to 2 decimal places
                     .append("\n"); // Add a newline for separation
         }
 
@@ -36,7 +34,7 @@ public class OutputPredictedImage {
         return annotatedImage;
     }
 
-    public Map<String, Integer> getPredictionResults() {
+    public Map<String, RecognizeSpecie> getPredictionResults() {
         return predictionResults;
     }
 

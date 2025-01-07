@@ -38,7 +38,7 @@
             android:name=".HomeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TutorialActivity"
+            android:name=".tutorials.TutorialActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".PublicActivity"

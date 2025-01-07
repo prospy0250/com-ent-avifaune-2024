@@ -82,7 +82,7 @@
     <string name="mode_sombre_texte">Le mode sombre économise votre batterie  et lutte contre la fatigue visuelle</string>
     <string name="download_text">Télécharge un guide d’utilisation approfondi de l’application au format pdf</string>
     <string name="photo_time_text">Confirmez l\'heure de la prise de la photo</string>
-    <string name="locate_text">Localisation (qu\'est ce que vous voyez?)</string>
+    <string name="locate_text">Localisation (qu\'est ce que vous voyez autour de vous? ex: un arbre, un rocher, autre?)</string>
     <string name="send">Envoyer</string>
     <string name="desc_text">Que voyez-vous autour de vous ?</string>
     <string name="zone_info_text">Plus d\'info sur les zones</string>
