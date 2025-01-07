@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.overlays;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,12 +10,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
-public class OverlayDialogFragmentPluvier extends DialogFragment {
+import com.example.myapplication.R;
+
+public class OverlayDialogFragmentChevalier extends DialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this dialog fragment
-        return inflater.inflate(R.layout.fragment_overlay_dialog_pluvier, container, false);
+        return inflater.inflate(R.layout.fragment_overlay_dialog_chevalier, container, false);
     }
 
     @Override
@@ -25,7 +27,7 @@ public class OverlayDialogFragmentPluvier extends DialogFragment {
             getDialog().getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
             getDialog().getWindow().setBackgroundDrawableResource(android.R.color.transparent); // Transparent background
         }
-        Button goBackButton=(Button) this.getView().findViewById(R.id.return_pluvier);
+        Button goBackButton=(Button) this.getView().findViewById(R.id.return_chevalier);
 
         View.OnClickListener listenerGoBackButton=new View.OnClickListener() {
             @Override

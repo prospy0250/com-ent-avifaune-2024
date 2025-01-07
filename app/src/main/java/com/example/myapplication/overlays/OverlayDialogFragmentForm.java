@@ -1,7 +1,5 @@
-package com.example.myapplication;
+package com.example.myapplication.overlays;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -14,12 +12,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
+
+import com.example.myapplication.GoogleFormApi;
+import com.example.myapplication.PhotoPage;
+import com.example.myapplication.R;
 
 import retrofit2.Call;
 import retrofit2.Callback;

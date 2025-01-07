@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.recognation_logic;
 
 public class BoundingBox {
         public float x1, y1, x2, y2, cx, cy, w, h, cnf;

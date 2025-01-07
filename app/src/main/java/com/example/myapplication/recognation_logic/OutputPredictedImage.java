@@ -1,9 +1,7 @@
-package com.example.myapplication;
+package com.example.myapplication.recognation_logic;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 
-import java.util.List;
 import java.util.Map;
 
 /**

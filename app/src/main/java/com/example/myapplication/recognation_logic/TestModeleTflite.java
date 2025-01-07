@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.recognation_logic;
 
 import static android.graphics.Paint.*;
 
@@ -40,7 +40,7 @@ public class TestModeleTflite {
     private static final float INPUT_STANDARD_DEVIATION = 255f;
     private static final DataType INPUT_IMAGE_TYPE = DataType.FLOAT32;
     private static final DataType OUTPUT_IMAGE_TYPE = DataType.FLOAT32;
-    private static final float CONFIDENCE_THRESHOLD = 0.3F;
+    private static final float CONFIDENCE_THRESHOLD = 0.4F;
     private static final float IOU_THRESHOLD = 0.5F;
 
     private Interpreter interpreter;
@@ -144,20 +144,24 @@ public class TestModeleTflite {
      */
     public OutputPredictedImage recognizeSpeciesClass(Bitmap inputImage) throws NoSpeciesRecognizedException {
         Map<String, RecognizeSpecie> predictionResults = new HashMap<>();
+
         TensorBuffer outputBuffer = predict(inputImage);
         List<BoundingBox> boxes = processOutput(outputBuffer);
-
-        if (boxes != null) {
-            System.out.println("not empty");
+        if (boxes != null && !boxes.isEmpty()) {
             for (BoundingBox box : boxes) {
-                predictionResults.computeIfAbsent(box.clsName, k -> new RecognizeSpecie(k, new ArrayList<>()))
-                        .getSpecieBoxes().add(box);
+                if (predictionResults.containsKey(box.clsName)) {
+                    predictionResults.get(box.clsName).getSpecieBoxes().add(box);
+                } else {
+                    predictionResults.put(box.clsName, new RecognizeSpecie(box.clsName, new ArrayList<>()));
+                    predictionResults.get(box.clsName).getSpecieBoxes().add(box);
+                }
             }
             Bitmap annotatedImage = annotateImage(inputImage, boxes);
             return new OutputPredictedImage(annotatedImage, predictionResults);
         } else {
             throw new NoSpeciesRecognizedException();
         }
+
     }
 
     /**
@@ -248,35 +252,6 @@ public class TestModeleTflite {
     /**
      * Draws bounding boxes on an image.
      */
-    /*
-    private Bitmap drawBoundingBoxes(Bitmap bitmap, List<BoundingBox> boxes) {
-        Bitmap mutableBitmap = bitmap.copy(Bitmap.Config.ARGB_8888, true);
-        Canvas canvas = new Canvas(mutableBitmap);
-
-        Paint paint = new Paint();
-        paint.setColor(Color.RED);
-        paint.setStyle(Style.STROKE);
-        paint.setStrokeWidth(8f);
-        /*
-        Paint textPaint = new Paint();
-        textPaint.setColor(Color.WHITE);
-        textPaint.setTextSize(40f);
-        //textPaint.setTypeface(Paint.DEFAULT_BOLD);
-
-        for (BoundingBox box : boxes) {
-            RectF rect = new RectF(
-                    box.x1 * mutableBitmap.getWidth(),
-                    box.y1 * mutableBitmap.getHeight(),
-                    box.x2 * mutableBitmap.getWidth(),
-                    box.y2 * mutableBitmap.getHeight()
-            );
-            canvas.drawRect(rect, paint);
-            //canvas.drawText(box.clsName, rect.left, rect.bottom, textPaint);
-        }
-
-        return mutableBitmap;
-    }*/
-
     private Bitmap drawBoundingBoxes(Bitmap bitmap, List<BoundingBox> boxes) {
         Bitmap mutableBitmap = bitmap.copy(Bitmap.Config.ARGB_8888, true);
         Canvas canvas = new Canvas(mutableBitmap);
