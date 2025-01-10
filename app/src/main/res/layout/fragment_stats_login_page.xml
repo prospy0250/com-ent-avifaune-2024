@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/fragment_stats.xml -->
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_transparent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="190dp"
+            android:text="@string/connexion_text"
+            android:textAlignment="center"
+            android:textSize="17sp"/>
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:layout_margin="25dp"
+            android:background="@drawable/shape_transparent">
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/user_name"
+                android:textSize="17sp"/>
+
+            <!-- Username Field -->
+            <EditText
+                android:id="@+id/usernameField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/password"
+                android:textSize="17sp"/>
+            <!--        <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/passwordField"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </com.google.android.material.textfield.TextInputLayout>
+            -->
+
+            <!-- Password Field -->
+            <EditText
+                android:id="@+id/passwordField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Login Button -->
+            <Button
+                android:layout_marginTop="10dp"
+                android:id="@+id/loginButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/login"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="#517293"
+                style="@style/ButtonAppearance"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/polygon_5"
+        android:paddingTop="30dp"
+        android:paddingEnd="50dp"
+        android:text="@string/stats"
+        android:textAlignment="center"
+        android:textColor="#1E1E1E"
+        android:textSize="38sp" />
+</FrameLayout>

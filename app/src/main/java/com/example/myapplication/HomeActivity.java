@@ -93,7 +93,7 @@ public class HomeActivity extends AppCompatActivity {
         View.OnClickListener listenerStatsButton = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goToPage("StatsPage");
+                goToPage("StatsLoginPage");
             }
         };
         statsButton.setOnClickListener(listenerStatsButton);

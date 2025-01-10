@@ -41,8 +41,8 @@ public class PublicActivity extends AppCompatActivity {
                 loadFragment(new LearningPage()); // Load the LearningPage fragment
                 bottomNavigationView.setSelectedItemId(R.id.navigation_apprendre); // Select the appropriate bottom nav item
                 break;
-            case "StatsPage":
-                loadFragment(new StatsPage()); // Load the StatsPage fragment
+            case "StatsLoginPage":
+                loadFragment(new StatsLoginPage()); // Load the StatsPage fragment
                 bottomNavigationView.setSelectedItemId(R.id.navigation_statistiques);
                 break;
             case "SettingsPage":
