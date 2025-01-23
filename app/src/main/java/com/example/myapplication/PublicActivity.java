@@ -65,7 +65,7 @@ public class PublicActivity extends AppCompatActivity {
             if (item.getItemId() == R.id.navigation_apprendre) {
                 selectedFragment = new LearningPage();
             } else if (item.getItemId() == R.id.navigation_statistiques) {
-                selectedFragment = new StatsPage();
+                selectedFragment = new StatsLoginPage();
             } else if (item.getItemId() == R.id.navigation_parametres) {
                 selectedFragment = new SettingsPage();
             } else if (item.getItemId() == R.id.navigation_identifier) {
